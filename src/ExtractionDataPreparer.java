@@ -1,25 +1,22 @@
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ExtractionDataPreparer {
     private DeserializedDataContainer dataContainer;
     private int percentToLearn;
 
-    public ExtractionDataPreparer(DeserializedDataContainer dataContainer, Map<String, String> learningData,
-                                  Map<String, String> testingData, int percentToLearn)
+    public ExtractionDataPreparer(DeserializedDataContainer dataContainer, int percentToLearn)
     {
         this.dataContainer = dataContainer;
         this.percentToLearn = percentToLearn;
-        splitDataToLearnAndTest(dataContainer, learningData, testingData, percentToLearn);
     }
 
     public DeserializedDataContainer getDataContainer() {
         return dataContainer;
     }
 
-    public void splitDataToLearnAndTest(DeserializedDataContainer dataContainer, Map<String, String> learningData,
-                                        Map<String, String> testingData, int percent)
+    public void splitDataToLearnAndTest(Map<String, String> learningData,
+                                        Map<String, String> testingData)
     {
         Map<String, Integer> countCountries = new HashMap<>();
         for(String key : dataContainer.getDeserializedData().keySet()){
@@ -40,7 +37,7 @@ public class ExtractionDataPreparer {
 
         for(String key : dataContainer.getDeserializedData().keySet()){
             String country = dataContainer.getDeserializedData().get(key);
-            if(settedCountries.get(country) < countCountries.get(country)*percent/100)
+            if(settedCountries.get(country) < countCountries.get(country)*percentToLearn/100)
             {
                 learningData.put(key, country);
             }

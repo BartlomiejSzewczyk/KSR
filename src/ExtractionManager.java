@@ -3,24 +3,18 @@ import java.util.List;
 import java.util.Map;
 
 public class ExtractionManager {
+    private Map<String, String> learnDataBeforeDel;
+    private Map<String, String> testDataBeforeDel;
+
     private Map<List<String>, String> learningData;
     private Map<List<String>, String> testingData;
-    private ExtractionDataPreparer dataPreparer;
 
     public ExtractionManager(int percentToLearn)
     {
-        Map<String, String> learningDataBefore = new HashMap<>();
-        Map<String, String> testingDataBefore = new HashMap<>();
-        XmlSerializator serializator = new XmlSerializator();
-        DeserializedDataContainer dataContainer = serializator.readXML(serializator.getAllFilesNumbers());
-        this.dataPreparer= new ExtractionDataPreparer(dataContainer, learningDataBefore, testingDataBefore, percentToLearn);
-
-        learningData = deleteStopwords(learningDataBefore);
-        testingData = deleteStopwords(testingDataBefore);
-    }
-
-    public ExtractionDataPreparer getDataPreparer() {
-        return dataPreparer;
+        DeserializedDataContainer dataContainer = readDataFromXml();
+        splitDataToLearnAndTest(dataContainer, percentToLearn);
+        learningData = deleteStopwords(learnDataBeforeDel);
+        testingData = deleteStopwords(testDataBeforeDel);
     }
 
     public Map<List<String>, String> getLearningData() {
@@ -37,6 +31,22 @@ public class ExtractionManager {
 
         return deleter.deleteStopwords(dataContainer);
 
+    }
+
+    public DeserializedDataContainer readDataFromXml()
+    {
+        XmlSerializator serializator = new XmlSerializator();
+        DeserializedDataContainer dataContainer = serializator.readXML(serializator.getAllFilesNumbers());
+
+        return dataContainer;
+    }
+
+    public void splitDataToLearnAndTest(DeserializedDataContainer dataContainer, int percentToLearn)
+    {
+        learnDataBeforeDel = new HashMap<>();
+        testDataBeforeDel = new HashMap<>();
+        ExtractionDataPreparer dataPreparer= new ExtractionDataPreparer(dataContainer, percentToLearn);
+        dataPreparer.splitDataToLearnAndTest(learnDataBeforeDel, testDataBeforeDel);
     }
 
 }
