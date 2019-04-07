@@ -2,7 +2,7 @@ package Logic.Features;
 
 import java.util.*;
 
-public class UpperCaseWordCounter {
+public class UpperCaseWordCounter implements IFeature {
 
     public int count(List<String> listOfWords) {
         int howManyUpperCase = 0;

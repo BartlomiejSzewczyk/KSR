@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TextLengthCounter {
+public class TextLengthCounter implements IFeature {
     public int count(List<String> listOfWords) {
         return listOfWords.size();
     }
