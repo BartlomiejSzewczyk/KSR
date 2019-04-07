@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class CountOwnNames {
     public static void Count(Map<String, String> learningMap){
-        List<Double> tempList = new ArrayList<>();
+        List<Double> tempList = new ArrayList();
         for(String key : learningMap.keySet()){
             double cnt = 0.0;
             char previousChar = key.charAt(0);

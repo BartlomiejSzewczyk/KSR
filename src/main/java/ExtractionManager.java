@@ -15,6 +15,11 @@ public class ExtractionManager {
         splitDataToLearnAndTest(dataContainer, percentToLearn);
         learningData = deleteStopwords(learnDataBeforeDel);
         testingData = deleteStopwords(testDataBeforeDel);
+
+        DataStemmer stemmer = new DataStemmer();
+        learningData = stemmer.stemmizeData(learningData);
+        testingData = stemmer.stemmizeData(testingData);
+
     }
 
     public Map<List<String>, String> getLearningData() {
