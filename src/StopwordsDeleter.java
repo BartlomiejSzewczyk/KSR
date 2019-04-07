@@ -29,12 +29,17 @@ public class StopwordsDeleter {
     public Map<List<String>, String> deleteStopwords(Map<String, String> dataContainer)
     {
         Map<List<String>, String> wordsWithCountries = new HashMap<>();
-        ArrayList<String> listOfWords = new ArrayList<>();
         for(String key : dataContainer.keySet())
         {
-            listOfWords.clear();
-            listOfWords.addAll(Arrays.asList(key.split("\\s+")));
-            listOfWords.removeAll(englishStopwords);
+            ArrayList<String> listOfWords = new ArrayList<>();
+            listOfWords.addAll(Arrays.asList(key.replaceAll("[\\p{Punct}]", "").split("\\s+")));
+            Set<String> set1 = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
+            set1.addAll(listOfWords);
+            Set<String> set2 = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
+            set2.addAll(englishStopwords);
+            set1.removeAll(set2);
+            listOfWords.retainAll(set1);
+            //listOfWords.removeAll(englishStopwords);
             wordsWithCountries.put(listOfWords, dataContainer.get(key));
         }
 
