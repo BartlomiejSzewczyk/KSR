@@ -1,10 +1,12 @@
+package Logic.Extraction;
+
 import java.io.*;
 import java.util.*;
 
 public class StopwordsDeleter {
 
     public List<String> englishStopwords;
-    static String fileWithStopwords = "resources/english_stopwords_large.txt";
+    static String fileWithStopwords = "src/main/java/Data/resources/english_stopwords_large.txt";
 
     public StopwordsDeleter()
     {

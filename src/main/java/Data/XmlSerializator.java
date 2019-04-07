@@ -1,3 +1,5 @@
+package Data;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -49,7 +51,7 @@ public class XmlSerializator {
     {
         Document doc = null;
         try {
-            File fXmlFile = new File("resources/reuters21578-xml/reut2-0" + fileNumber + ".xml");
+            File fXmlFile = new File("src/main/java/Data/resources/reuters21578-xml/reut2-0" + fileNumber + ".xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder;
             dBuilder = dbFactory.newDocumentBuilder();

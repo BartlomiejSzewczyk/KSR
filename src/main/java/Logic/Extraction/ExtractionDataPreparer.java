@@ -1,3 +1,7 @@
+package Logic.Extraction;
+
+import Data.DeserializedDataContainer;
+
 import java.util.HashMap;
 import java.util.Map;
 

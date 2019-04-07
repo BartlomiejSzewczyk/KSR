@@ -1,3 +1,5 @@
+package Logic.Extraction;
+
 import org.tartarus.martin.Stemmer;
 
 import java.util.ArrayList;
