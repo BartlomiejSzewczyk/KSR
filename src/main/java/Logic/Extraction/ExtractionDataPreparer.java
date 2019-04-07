@@ -1,8 +1,10 @@
 package Logic.Extraction;
 
+import Data.DataNode;
 import Data.DeserializedDataContainer;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ExtractionDataPreparer {
@@ -19,14 +21,13 @@ public class ExtractionDataPreparer {
         return dataContainer;
     }
 
-    public void splitDataToLearnAndTest(Map<String, String> learningData,
-                                        Map<String, String> testingData)
+    public void splitDataToLearnAndTest(List<DataNode> learningData,
+                                        List<DataNode> testingData)
     {
         Map<String, Integer> countCountries = new HashMap<>();
-        for(String key : dataContainer.getDeserializedData().keySet()){
-            countCountries.putIfAbsent(dataContainer.getDeserializedData().get(key), 0);
-            countCountries.put(dataContainer.getDeserializedData().get(key),
-                    countCountries.get(dataContainer.getDeserializedData().get(key))+1);
+        for(DataNode node : dataContainer.getDeserializedData()){
+            countCountries.putIfAbsent(node.place, 0);
+            countCountries.put(node.place, countCountries.get(node.place)+1);
         }
 
         Map<String, Integer> settedCountries = new HashMap<>()
@@ -39,15 +40,15 @@ public class ExtractionDataPreparer {
             put("west-germany", 0);
         }};
 
-        for(String key : dataContainer.getDeserializedData().keySet()){
-            String country = dataContainer.getDeserializedData().get(key);
+        for(DataNode node : dataContainer.getDeserializedData()){
+            String country = node.place;
             if(settedCountries.get(country) < countCountries.get(country)*percentToLearn/100)
             {
-                learningData.put(key, country);
+                learningData.add(node);
             }
             else
             {
-                testingData.put(key, country);
+                testingData.add(node);
             }
             settedCountries.put(country, settedCountries.get(country)+1);
         }

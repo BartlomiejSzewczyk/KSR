@@ -1,5 +1,7 @@
 package Logic.Extraction;
 
+import Data.DataNode;
+
 import java.io.*;
 import java.util.*;
 
@@ -28,23 +30,18 @@ public class StopwordsDeleter {
         }
     }
 
-    public Map<List<String>, String> deleteStopwords(Map<String, String> dataContainer)
+    public void deleteStopwords(List<DataNode> dataContainer)
     {
-        Map<List<String>, String> wordsWithCountries = new HashMap<>();
-        for(String key : dataContainer.keySet())
-        {
+        for(DataNode node : dataContainer) {
             ArrayList<String> listOfWords = new ArrayList<>();
-            listOfWords.addAll(Arrays.asList(key.replaceAll("[\\p{Punct}]", "").split("\\s+")));
+            listOfWords.addAll(Arrays.asList(node.body.replaceAll("[\\p{Punct}]", "").split("\\s+")));
             Set<String> set1 = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
             set1.addAll(listOfWords);
             Set<String> set2 = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
             set2.addAll(englishStopwords);
             set1.removeAll(set2);
             listOfWords.retainAll(set1);
-            //listOfWords.removeAll(englishStopwords);
-            wordsWithCountries.put(listOfWords, dataContainer.get(key));
+            node.words = listOfWords;
         }
-
-        return wordsWithCountries;
     }
 }

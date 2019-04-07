@@ -1,45 +1,44 @@
 package Logic.Extraction;
 
+import Data.DataNode;
 import Data.DeserializedDataContainer;
 import Data.XmlSerializator;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class ExtractionManager {
-    private Map<String, String> learnDataBeforeDel;
-    private Map<String, String> testDataBeforeDel;
-
-    private Map<List<String>, String> learningData;
-    private Map<List<String>, String> testingData;
+    private List<DataNode> learningData;
+    private List<DataNode> testingData;
 
     public ExtractionManager(int percentToLearn)
     {
+        learningData = new ArrayList<>();
+        testingData = new ArrayList<>();
         DeserializedDataContainer dataContainer = readDataFromXml();
         splitDataToLearnAndTest(dataContainer, percentToLearn);
-        learningData = deleteStopwords(learnDataBeforeDel);
-        testingData = deleteStopwords(testDataBeforeDel);
+        deleteStopwords(learningData);
+        deleteStopwords(testingData);
 
         DataStemmer stemmer = new DataStemmer();
-        learningData = stemmer.stemmizeData(learningData);
-        testingData = stemmer.stemmizeData(testingData);
+        stemmer.stemmizeData(learningData);
+        stemmer.stemmizeData(testingData);
 
     }
 
-    public Map<List<String>, String> getLearningData() {
+    public List<DataNode> getLearningData() {
         return learningData;
     }
 
-    public Map<List<String>, String> getTestingData() {
+    public List<DataNode> getTestingData() {
         return testingData;
     }
 
-    public Map<List<String>, String> deleteStopwords(Map<String, String> dataContainer)
+    public void deleteStopwords(List<DataNode> dataContainer)
     {
         StopwordsDeleter deleter = new StopwordsDeleter();
 
-        return deleter.deleteStopwords(dataContainer);
+        deleter.deleteStopwords(dataContainer);
 
     }
 
@@ -53,10 +52,8 @@ public class ExtractionManager {
 
     public void splitDataToLearnAndTest(DeserializedDataContainer dataContainer, int percentToLearn)
     {
-        learnDataBeforeDel = new HashMap<>();
-        testDataBeforeDel = new HashMap<>();
         ExtractionDataPreparer dataPreparer= new ExtractionDataPreparer(dataContainer, percentToLearn);
-        dataPreparer.splitDataToLearnAndTest(learnDataBeforeDel, testDataBeforeDel);
+        dataPreparer.splitDataToLearnAndTest(learningData, testingData);
     }
 
 }

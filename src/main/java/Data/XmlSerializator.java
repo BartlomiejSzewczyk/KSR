@@ -8,6 +8,8 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,32 +18,6 @@ public class XmlSerializator {
 
     public DeserializedDataContainer dataContainer;
 
-//    public List<String> readXMLToBodyList(String fileNumber){
-//        List<String> bodyList = new ArrayList<>();
-//
-//        try {
-//            File fXmlFile = new File("reuters21578-xml/reut2-0" + fileNumber + ".xml");
-//            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-//            DocumentBuilder dBuilder;
-//            dBuilder = dbFactory.newDocumentBuilder();
-//            Document doc = dBuilder.parse(fXmlFile);
-//            doc.getDocumentElement().normalize();
-//            NodeList nList = doc.getElementsByTagName("REUTERS");
-//            for(int i = 0; i < nList.getLength(); ++i){
-//                Node node = nList.item(i);
-//                if (node.getNodeType() == Node.ELEMENT_NODE) {
-//
-//                    Element eElement = (Element) node;
-//                    if(eElement.getElementsByTagName("BODY").item(0) != null){
-//                        bodyList.add(eElement.getElementsByTagName("BODY").item(0).getTextContent());
-//                    }
-//                }
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return bodyList;
-//    }
     public XmlSerializator()
     {
         dataContainer = new DeserializedDataContainer();
@@ -93,8 +69,27 @@ public class XmlSerializator {
                 Element element = (Element) node;
                 if(checkIfElementIsCorrect(element))
                 {
-                    dataContainer.setDeserializedData(element.getElementsByTagName("BODY").item(0).getTextContent(),
-                            element.getElementsByTagName("PLACES").item(0).getFirstChild().getTextContent());
+                    DataNode dataNode = new DataNode();
+                    dataNode.date = element.getElementsByTagName("DATE").item(0).getTextContent();
+                    for(int j=0; j<element.getElementsByTagName("TOPICS").getLength(); j++)
+                        dataNode.topics.add(element.getElementsByTagName("TOPICS").item(j).getTextContent());
+
+                    dataNode.place = element.getElementsByTagName("PLACES").item(0).getFirstChild().getTextContent();
+
+                    for(int j=0; j<element.getElementsByTagName("PEOPLE").getLength(); j++)
+                        dataNode.people.add(element.getElementsByTagName("PEOPLE").item(j).getTextContent());
+
+                    for(int j=0; j<element.getElementsByTagName("ORGS").getLength(); j++)
+                        dataNode.organizations.add(element.getElementsByTagName("ORGS").item(j).getTextContent());
+
+                    for(int j=0; j<element.getElementsByTagName("EXCHANGES").getLength(); j++)
+                        dataNode.exchanges.add(element.getElementsByTagName("EXCHANGES").item(j).getTextContent());
+
+                    dataNode.title = element.getElementsByTagName("TITLE").item(0).getTextContent();
+
+                    dataNode.body = element.getElementsByTagName("BODY").item(0).getTextContent();
+
+                    dataContainer.setDeserializedData(dataNode);
                 }
             }
         }

@@ -1,5 +1,6 @@
 package Logic.Extraction;
 
+import Data.DataNode;
 import org.tartarus.martin.Stemmer;
 
 import java.util.ArrayList;
@@ -33,15 +34,12 @@ public class DataStemmer {
         return stemmizedList;
     }
 
-    public Map<List<String>, String> stemmizeData(Map<List<String>, String> data)
+    public void stemmizeData(List<DataNode> data)
     {
-        Map<List<String>, String> dataMap = new HashMap<>();
-        for(List<String> list : data.keySet())
+        for(DataNode node : data)
         {
-            dataMap.put(stemmizeListOfWord(list), data.get(list));
+            node.words = stemmizeListOfWord(node.words);
 
         }
-
-        return dataMap;
     }
 }

@@ -1,26 +1,34 @@
 package Data;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DeserializedDataContainer {
 
-    private Map<String, String> deserializedData;
+    private List<DataNode> deserializedData;
 
     public DeserializedDataContainer()
     {
-        deserializedData = new HashMap<>();
+        deserializedData = new ArrayList<>();
     }
 
-    public Map<String, String> getDeserializedData() {
+    public List<DataNode> getDeserializedData() {
         return deserializedData;
     }
 
-    public void setDeserializedData(Map<String, String> deserializedData) {
+    public void setDeserializedData(List<DataNode> deserializedData) {
         this.deserializedData = deserializedData;
     }
 
+    public void setDeserializedData(DataNode node) {
+        this.deserializedData.add(node);
+    }
+
     public void setDeserializedData(String body, String place) {
-        this.deserializedData.put(body, place);
+        DataNode node = new DataNode();
+        node.body = body;
+        node.place = place;
+        this.deserializedData.add(node);
+
     }
 }
