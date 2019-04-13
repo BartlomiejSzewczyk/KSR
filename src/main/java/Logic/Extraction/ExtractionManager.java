@@ -5,16 +5,21 @@ import Data.DeserializedDataContainer;
 import Data.XmlSerializator;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ExtractionManager {
     private List<DataNode> learningData;
     private List<DataNode> testingData;
+    private List<List<String>> learningDataWords;
+    private List<String> listDataWords;
 
     public ExtractionManager(int percentToLearn)
     {
         learningData = new ArrayList<>();
         testingData = new ArrayList<>();
+        learningDataWords = new ArrayList<>();
+        listDataWords = new ArrayList<>();
         DeserializedDataContainer dataContainer = readDataFromXml();
         splitDataToLearnAndTest(dataContainer, percentToLearn);
         deleteStopwords(learningData);
@@ -23,6 +28,7 @@ public class ExtractionManager {
         DataStemmer stemmer = new DataStemmer();
         stemmer.stemmizeData(learningData);
         stemmer.stemmizeData(testingData);
+        createLearningDataWords();
 
     }
 
@@ -32,6 +38,10 @@ public class ExtractionManager {
 
     public List<DataNode> getTestingData() {
         return testingData;
+    }
+
+    public List<List<String>> getLearningDataWords(){
+        return learningDataWords;
     }
 
     public void deleteStopwords(List<DataNode> dataContainer)
@@ -54,6 +64,15 @@ public class ExtractionManager {
     {
         ExtractionDataPreparer dataPreparer= new ExtractionDataPreparer(dataContainer, percentToLearn);
         dataPreparer.splitDataToLearnAndTest(learningData, testingData);
+    }
+
+    public void createLearningDataWords()
+    {
+        for(int i = 0; i < learningData.size(); ++i){
+            listDataWords.clear();
+            List<String> temp = new ArrayList<>(learningData.get(i).words);
+            learningDataWords.add(temp);
+        }
     }
 
 }
