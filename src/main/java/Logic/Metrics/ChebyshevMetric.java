@@ -4,7 +4,7 @@ import java.util.List;
 
 public class ChebyshevMetric implements IMetric {
     @Override
-    public double calculateDistance(List<Integer> firstVector, List<Integer> secondVector) {
+    public double calculateDistance(List<Double> firstVector, List<Double> secondVector) {
         if (firstVector.size() != secondVector.size())
             throw new IllegalArgumentException("Arrays have different sizes");
 

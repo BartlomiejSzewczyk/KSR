@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface IMetric {
 
-    double calculateDistance(List<Integer> firstVector, List<Integer> secondVector);
+    double calculateDistance(List<Double> firstVector, List<Double> secondVector);
 }
