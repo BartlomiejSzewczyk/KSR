@@ -4,15 +4,15 @@ import java.util.*;
 
 public class UpperCaseWordCounter implements IFeature {
 
-    public int count(List<String> listOfWords) {
-        int howManyUpperCase = 0;
+    public double count(List<String> listOfWords) {
+        double howManyUpperCase = 0;
         for (String word : listOfWords) {
             if (Character.isUpperCase(word.charAt(0))) {
                 howManyUpperCase++;
             }
         }
 
-        return howManyUpperCase;
+        return (double)howManyUpperCase;
     }
 
     public Map<String, Integer> count(Map<List<String>, String> data)
@@ -37,11 +37,11 @@ public class UpperCaseWordCounter implements IFeature {
             put("west-germany", 0);
         }};
 
-        int howMany = 0;
+        double howMany = 0;
         for(List<String> key : data.keySet())
         {
             howMany = count(key);
-            howManyInCountry.put(data.get(key), howManyInCountry.get(data.get(key)) + howMany);
+            howManyInCountry.put(data.get(key), howManyInCountry.get(data.get(key)) + (int)howMany);
             howManyTimes.put(data.get(key), howManyTimes.get(data.get(key)) + 1);
         }
 

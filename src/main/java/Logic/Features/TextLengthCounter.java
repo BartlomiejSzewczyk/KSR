@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 public class TextLengthCounter implements IFeature {
-    public int count(List<String> listOfWords) {
-        return listOfWords.size();
+    public double count(List<String> listOfWords) {
+        return (double)listOfWords.size();
     }
 
     public Map<String, Integer> count(Map<List<String>, String> data)
@@ -31,11 +31,11 @@ public class TextLengthCounter implements IFeature {
             put("west-germany", 0);
         }};
 
-        int howMany = 0;
+        double howMany = 0;
         for(List<String> key : data.keySet())
         {
             howMany = count(key);
-            howManyInCountry.put(data.get(key), howManyInCountry.get(data.get(key)) + howMany);
+            howManyInCountry.put(data.get(key), howManyInCountry.get(data.get(key)) + (int)howMany);
             howManyTimes.put(data.get(key), howManyTimes.get(data.get(key)) + 1);
         }
 
