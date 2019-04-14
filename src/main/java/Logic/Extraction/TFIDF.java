@@ -5,7 +5,7 @@ import Logic.Features.IFeature;
 
 import java.util.*;
 
-public class TFIDF implements IFeature {
+public class TFIDF{
 
     public List<String> getListMainWords() {
         return listMainWords;
@@ -119,23 +119,5 @@ public class TFIDF implements IFeature {
             listMainWords.add(entry.getKey());
         }
         return sortedByValues;
-    }
-
-    @Override
-    public double count(List<String> listOfWords) {
-        List<Double> vectorFeatures = new ArrayList<>();
-        for(int i = 0; i < listOfWords.size(); ++i){
-            for(int j = 0; j < listMainWords.size(); ++j){
-                if(listOfWords.get(i).equals(listMainWords.get(j))){
-                    vectorFeatures.add(tfIdf(listOfWords, listAllDocs, listMainWords.get(j)));
-                }
-            }
-        }
-        return 0;
-    }
-
-    @Override
-    public Map<String, Integer> count(Map<List<String>, String> data) {
-        return null;
     }
 }
