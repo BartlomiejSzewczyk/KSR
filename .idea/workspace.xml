@@ -63,7 +63,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Logic/KnnAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="-94">
               <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -78,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Extraction/TFIDF.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="27" selection-end-column="35" />
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="27" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#174#175#0" expanded="true" />
@@ -353,12 +353,12 @@
       <workItem from="1555070475806" duration="110000" />
       <workItem from="1555071333632" duration="1402000" />
       <workItem from="1555155835737" duration="31491000" />
-      <workItem from="1555235296772" duration="7661000" />
+      <workItem from="1555235296772" duration="8256000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57751000" />
+    <option name="totallyTimeSpent" value="58346000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -614,7 +614,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Extraction/TFIDF.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="27" selection-end-column="35" />
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="27" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#174#175#0" expanded="true" />
@@ -663,7 +663,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Logic/KnnAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="-94">
           <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
