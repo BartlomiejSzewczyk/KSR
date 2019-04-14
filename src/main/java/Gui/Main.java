@@ -8,7 +8,7 @@ import Logic.Metrics.EuclideanMetric;
 import Logic.Metrics.IMetric;
 import Logic.SimilarityMeasures.ISimilarityMeasure;
 import Logic.SimilarityMeasures.NGramMeasure;
-//import Logic.SimilarityMeasures.NiewiadomskiNGramMeasure;
+import Logic.SimilarityMeasures.NiewiadomskiNGramMeasure;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -47,7 +47,7 @@ public class Main {
 //                new UpperCaseWordCounter()
 
 
-//                new NiewiadomskiNGramMeasure()
+                new NiewiadomskiNGramMeasure()
 
         );
 
