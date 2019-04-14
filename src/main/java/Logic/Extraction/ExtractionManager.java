@@ -26,7 +26,6 @@ public class ExtractionManager {
         DataStemmer stemmer = new DataStemmer();
         stemmer.stemmizeData(learningData);
         stemmer.stemmizeData(testingData);
-        createLearningDataWords();
 
     }
 
@@ -64,11 +63,14 @@ public class ExtractionManager {
         dataPreparer.splitDataToLearnAndTest(learningData, testingData);
     }
 
-    public void createLearningDataWords()
+    public void createLearningDataWords(String country)
     {
+        learningDataWords.clear();
         for(int i = 0; i < learningData.size(); ++i){
-            List<String> temp = new ArrayList<>(learningData.get(i).words);
-            learningDataWords.add(temp);
+            if(learningData.get(i).place.equals(country)){
+                List<String> temp = new ArrayList<>(learningData.get(i).words);
+                learningDataWords.add(temp);
+            }
         }
     }
 
