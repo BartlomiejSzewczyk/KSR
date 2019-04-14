@@ -9,11 +9,9 @@ public class TFIDF{
     }
 
     public List<String> listMainWords;
-    public List<List<String>> listAllDocs;
 
     public TFIDF(){
         listMainWords = new ArrayList<>();
-        listAllDocs = new ArrayList<>();
     }
 
     public double tf(List<String> doc, String term) {
@@ -46,6 +44,7 @@ public class TFIDF{
     }
 
     public void ChooseMainWordsForCountries(ExtractionManager extractionManager, String country, int numberOfWords){
+
         /*Map<String, Double> mapCountriesWords = new HashMap<>();
         for(int i = 0; i < extractionManager.getLearningData().size(); ++i){
             if(extractionManager.getLearningData().get(i).label.equals(country)){
@@ -68,8 +67,7 @@ public class TFIDF{
                 }
             }
         }*/
-
-
+        listMainWords.clear();
         Map<String, Double> mapCountriesWords = new HashMap<String, Double>();
         for(int i = 0; i < extractionManager.getLearningData().size(); ++i){
             if(extractionManager.getLearningData().get(i).label.equals(country)){
@@ -83,9 +81,9 @@ public class TFIDF{
                     mapCountriesWords.put(extractionManager.getLearningData().get(i).stemmedWords.get(j), tempCoefficient);
                 }
             }
-            System.out.println(i);
         }
         sortMap(mapCountriesWords, listMainWords, numberOfWords);
+        extractionManager.CreateKeyWordsList(listMainWords);
     }
 
     public <String, Double extends Comparable<Double>> Map <String, Double> sortMap(final Map<String, Double> mapCountriesWords, List<String> listMainWords, int numberOfWords)
