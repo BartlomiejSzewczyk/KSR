@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class NumberOfKeywords implements IFeature {
 
+
     @Override
     public double count(List<String> listOfWords) {
         return 0;

@@ -26,8 +26,8 @@ public class ExtractionDataPreparer {
     {
         Map<String, Integer> countCountries = new HashMap<>();
         for(DataNode node : dataContainer.getDeserializedData()){
-            countCountries.putIfAbsent(node.place, 0);
-            countCountries.put(node.place, countCountries.get(node.place)+1);
+            countCountries.putIfAbsent(node.label, 0);
+            countCountries.put(node.label, countCountries.get(node.label)+1);
         }
 
         Map<String, Integer> settedCountries = new HashMap<>()
@@ -41,7 +41,7 @@ public class ExtractionDataPreparer {
         }};
 
         for(DataNode node : dataContainer.getDeserializedData()){
-            String country = node.place;
+            String country = node.label;
             if(settedCountries.get(country) < countCountries.get(country)*percentToLearn/100)
             {
                 learningData.add(node);

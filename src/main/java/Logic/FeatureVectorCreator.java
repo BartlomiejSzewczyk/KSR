@@ -28,6 +28,6 @@ public class FeatureVectorCreator {
         {
             featureVectors.add(feature.count(node.stemmedWords));
         }
-        return new FeatureVectorWithCountry(node.place, featureVectors);
+        return new FeatureVectorWithCountry(node.label, featureVectors);
     }
 }
