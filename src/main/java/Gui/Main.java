@@ -25,7 +25,7 @@ public class Main {
 //        System.out.println(extractionManager.getLearningData().size());
 //        System.out.println(extractionManager.getTestingData().size());
 //
-//        System.out.println(extractionManager.getLearningData().get(0).words);
+//        System.out.println(extractionManager.getLearningData().get(0).stemmedWords);
 //        System.out.println(extractionManager.getLearningData().get(0).place);
 //        TFIDF tfidf = new TFIDF();
         /*extractionManager.createLearningDataWords("uk");

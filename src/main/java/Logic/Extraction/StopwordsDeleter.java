@@ -41,7 +41,7 @@ public class StopwordsDeleter {
             set2.addAll(englishStopwords);
             set1.removeAll(set2);
             listOfWords.retainAll(set1);
-            node.words = listOfWords;
+            node.stemmedWords = listOfWords;
         }
     }
 }

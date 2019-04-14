@@ -26,7 +26,7 @@ public class FeatureVectorCreator {
         List<Double> featureVectors = new ArrayList<>();
         for (IFeature feature : features)
         {
-            featureVectors.add(feature.count(node.words));
+            featureVectors.add(feature.count(node.stemmedWords));
         }
         return new FeatureVectorWithCountry(node.place, featureVectors);
     }

@@ -1,8 +1,5 @@
 package Logic.Extraction;
 
-import Logic.Extraction.ExtractionManager;
-import Logic.Features.IFeature;
-
 import java.util.*;
 
 public class TFIDF{
@@ -52,12 +49,12 @@ public class TFIDF{
         /*Map<String, Double> mapCountriesWords = new HashMap<>();
         for(int i = 0; i < extractionManager.getLearningData().size(); ++i){
             if(extractionManager.getLearningData().get(i).place.equals(country)){
-                for(int j = 0; j < extractionManager.getLearningData().get(i).words.size(); ++j){
-                    if(mapCountriesWords.containsKey(extractionManager.getLearningData().get(i).words.get(j))){
-                        mapCountriesWords.put(extractionManager.getLearningData().get(i).words.get(j), mapCountriesWords.get(extractionManager.getLearningData().get(i).words.get(j)) +1);
+                for(int j = 0; j < extractionManager.getLearningData().get(i).stemmedWords.size(); ++j){
+                    if(mapCountriesWords.containsKey(extractionManager.getLearningData().get(i).stemmedWords.get(j))){
+                        mapCountriesWords.put(extractionManager.getLearningData().get(i).stemmedWords.get(j), mapCountriesWords.get(extractionManager.getLearningData().get(i).stemmedWords.get(j)) +1);
                     }
                     else{
-                        mapCountriesWords.put(extractionManager.getLearningData().get(i).words.get(j), 1.0);
+                        mapCountriesWords.put(extractionManager.getLearningData().get(i).stemmedWords.get(j), 1.0);
                     }
                 }
             }
@@ -76,14 +73,14 @@ public class TFIDF{
         Map<String, Double> mapCountriesWords = new HashMap<String, Double>();
         for(int i = 0; i < extractionManager.getLearningData().size(); ++i){
             if(extractionManager.getLearningData().get(i).place.equals(country)){
-                for(int j = 0; j < extractionManager.getLearningData().get(i).words.size(); ++j){
-                    double tempCoefficient = tfIdf(extractionManager.getLearningData().get(i).words, extractionManager.getLearningDataWords(), extractionManager.getLearningData().get(i).words.get(j));
-                    if(mapCountriesWords.containsKey(extractionManager.getLearningData().get(i).words.get(j))){
-                        if(tempCoefficient < mapCountriesWords.get(extractionManager.getLearningData().get(i).words.get(j))){
-                            mapCountriesWords.put(extractionManager.getLearningData().get(i).words.get(j), tempCoefficient);
+                for(int j = 0; j < extractionManager.getLearningData().get(i).stemmedWords.size(); ++j){
+                    double tempCoefficient = tfIdf(extractionManager.getLearningData().get(i).stemmedWords, extractionManager.getLearningDataWords(), extractionManager.getLearningData().get(i).stemmedWords.get(j));
+                    if(mapCountriesWords.containsKey(extractionManager.getLearningData().get(i).stemmedWords.get(j))){
+                        if(tempCoefficient < mapCountriesWords.get(extractionManager.getLearningData().get(i).stemmedWords.get(j))){
+                            mapCountriesWords.put(extractionManager.getLearningData().get(i).stemmedWords.get(j), tempCoefficient);
                         }
                     }
-                    mapCountriesWords.put(extractionManager.getLearningData().get(i).words.get(j), tempCoefficient);
+                    mapCountriesWords.put(extractionManager.getLearningData().get(i).stemmedWords.get(j), tempCoefficient);
                 }
             }
             System.out.println(i);

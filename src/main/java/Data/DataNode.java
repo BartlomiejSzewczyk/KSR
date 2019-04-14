@@ -1,7 +1,6 @@
 package Data;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class DataNode {
@@ -13,7 +12,8 @@ public class DataNode {
     public List<String> exchanges;
     public String title;
     public String body;
-    public List<String> words;
+    public List<String> stemmedWords;
+    public List<String> keyWords;
 
     public DataNode(String body, String place)
     {
@@ -23,7 +23,7 @@ public class DataNode {
         people = new ArrayList<>();
         organizations = new ArrayList<>();
         exchanges = new ArrayList<>();
-        words = new ArrayList<>();
+        stemmedWords = new ArrayList<>();
     }
 
     public DataNode()
@@ -32,6 +32,7 @@ public class DataNode {
         people = new ArrayList<>();
         organizations = new ArrayList<>();
         exchanges = new ArrayList<>();
-        words = new ArrayList<>();
+        stemmedWords = new ArrayList<>();
+        keyWords = new ArrayList<>();
     }
 }

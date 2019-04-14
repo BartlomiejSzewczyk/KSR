@@ -14,12 +14,12 @@ public class HighestFrequencyWord {
         Map<String, Double> mapCountriesWords = new HashMap<>();
         for(int i = 0; i < extractionManager.getLearningData().size(); ++i){
             if(extractionManager.getLearningData().get(i).place.equals(country)){
-                for(int j = 0; j < extractionManager.getLearningData().get(i).words.size(); ++j){
-                    if(mapCountriesWords.containsKey(extractionManager.getLearningData().get(i).words.get(j))){
-                        mapCountriesWords.put(extractionManager.getLearningData().get(i).words.get(j), mapCountriesWords.get(extractionManager.getLearningData().get(i).words.get(j)) +1);
+                for(int j = 0; j < extractionManager.getLearningData().get(i).stemmedWords.size(); ++j){
+                    if(mapCountriesWords.containsKey(extractionManager.getLearningData().get(i).stemmedWords.get(j))){
+                        mapCountriesWords.put(extractionManager.getLearningData().get(i).stemmedWords.get(j), mapCountriesWords.get(extractionManager.getLearningData().get(i).stemmedWords.get(j)) +1);
                     }
                     else{
-                        mapCountriesWords.put(extractionManager.getLearningData().get(i).words.get(j), 1.0);
+                        mapCountriesWords.put(extractionManager.getLearningData().get(i).stemmedWords.get(j), 1.0);
                     }
                 }
             }

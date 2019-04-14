@@ -5,7 +5,6 @@ import Data.DeserializedDataContainer;
 import Data.XmlSerializator;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ExtractionManager {
@@ -68,7 +67,7 @@ public class ExtractionManager {
         learningDataWords.clear();
         for(int i = 0; i < learningData.size(); ++i){
             if(learningData.get(i).place.equals(country)){
-                List<String> temp = new ArrayList<>(learningData.get(i).words);
+                List<String> temp = new ArrayList<>(learningData.get(i).stemmedWords);
                 learningDataWords.add(temp);
             }
         }

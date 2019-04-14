@@ -14,8 +14,8 @@ public class NGramMeasure implements ISimilarityMeasure{
 
     @Override
     public double countSimilarity(DataNode first, DataNode second) {
-            List<String> firstNodeWords = first.words;
-            List<String> secondNodeWords = second.words;
+            List<String> firstNodeWords = first.stemmedWords;
+            List<String> secondNodeWords = second.stemmedWords;
             int howManyFound = 0;
 
             int nLength = firstNodeWords.size() - nValue;

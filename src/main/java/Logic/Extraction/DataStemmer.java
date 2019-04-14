@@ -4,9 +4,7 @@ import Data.DataNode;
 import org.tartarus.martin.Stemmer;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class DataStemmer {
     private Stemmer stemmer;
@@ -38,7 +36,7 @@ public class DataStemmer {
     {
         for(DataNode node : data)
         {
-            node.words = stemmizeListOfWord(node.words);
+            node.stemmedWords = stemmizeListOfWord(node.stemmedWords);
 
         }
     }
