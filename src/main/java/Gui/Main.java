@@ -5,6 +5,7 @@ import Logic.Classificators.FeatureClassificator;
 import Logic.Classificators.IClassificator;
 import Logic.Classificators.SimilarityClassificator;
 import Logic.Extraction.ExtractionManager;
+import Logic.Extraction.HighestFrequencyWord;
 import Logic.Extraction.TFIDF;
 import Logic.Features.*;
 import Logic.Metrics.EuclideanMetric;
@@ -39,7 +40,6 @@ public class Main {
         tfidf.ChooseMainWordsForCountries(extractionManager, "japan", 20);
         extractionManager.createLearningDataWords("west-germany");
         tfidf.ChooseMainWordsForCountries(extractionManager, "west-germany", 20);*/
-
         List<ISimilarityMeasure> chosenFeatures = Arrays.asList(
 //                new FirstVowelWordCounter(),
 //                new LastVowelWordCounter(),
@@ -95,5 +95,9 @@ public class Main {
         System.out.println("bad: ");
         for(Map.Entry e : howManyBad.entrySet())
             System.out.println(e.getKey() + "    " + e.getValue());
+
+//        HighestFrequencyWord highestFrequencyWord = new HighestFrequencyWord();
+//        extractionManager.createLearningDataWords("canada");
+//        highestFrequencyWord.ChooseWords(extractionManager, 20, "canada");
     }
 }
