@@ -1,9 +1,8 @@
 package Logic.Extraction;
 
-import Data.DataNode;
-import Data.DeserializedDataContainer;
-import Data.XmlSerializator;
+import Data.*;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,19 +11,13 @@ public class ExtractionManager {
     private List<DataNode> testingData;
     private List<List<String>> learningDataWords;
 
-    public List<List<String>> getKeyWords() {
-        return keyWords;
-    }
-
-    private List<List<String>> keyWords;
-
-    public ExtractionManager(int percentToLearn)
-    {
+    public ExtractionManager(int percentToLearn, ISerializator serializator, String label) throws NoSuchFieldException, IllegalAccessException {
         learningData = new ArrayList<>();
         testingData = new ArrayList<>();
         learningDataWords = new ArrayList<>();
         keyWords = new ArrayList<>();
-        DeserializedDataContainer dataContainer = readDataFromXml();
+
+        DeserializedDataContainer dataContainer = readDataFromXml(serializator, label);
         splitDataToLearnAndTest(dataContainer, percentToLearn);
         deleteStopwords(learningData);
         deleteStopwords(testingData);
@@ -32,9 +25,12 @@ public class ExtractionManager {
         DataStemmer stemmer = new DataStemmer();
         stemmer.stemmizeData(learningData);
         stemmer.stemmizeData(testingData);
-        AssignKeyWords();
-
     }
+    public List<List<String>> getKeyWords() {
+        return keyWords;
+    }
+
+    private List<List<String>> keyWords;
 
     public List<DataNode> getLearningData() {
         return learningData;
@@ -56,10 +52,13 @@ public class ExtractionManager {
 
     }
 
-    public DeserializedDataContainer readDataFromXml()
-    {
-        XmlSerializator serializator = new XmlSerializator();
-        DeserializedDataContainer dataContainer = serializator.readXML(serializator.getAllFilesNumbers());
+    public DeserializedDataContainer readDataFromXml(ISerializator serializator, String label) throws NoSuchFieldException, IllegalAccessException {
+        LabelsTypes lt = new LabelsTypes();
+        Field f = lt.getClass().getDeclaredField(label);
+        f.setAccessible(true);
+        LabelsTypes.chosen = (List<String>)f.get(lt);
+
+        DeserializedDataContainer dataContainer = serializator.readXML(serializator.getAllFilesNumbers(), label);
 
         return dataContainer;
     }
@@ -70,11 +69,11 @@ public class ExtractionManager {
         dataPreparer.splitDataToLearnAndTest(learningData, testingData);
     }
 
-    public void createLearningDataWords(String country)
+    public void createLearningDataWords(String label)
     {
         learningDataWords.clear();
         for(int i = 0; i < learningData.size(); ++i){
-            if(learningData.get(i).label.equals(country)){
+            if(learningData.get(i).label.equals(label)){
                 List<String> temp = new ArrayList<>(learningData.get(i).stemmedWords);
                 learningDataWords.add(temp);
             }
@@ -85,14 +84,4 @@ public class ExtractionManager {
         List<String> tempList = new ArrayList<>(wordList);
         keyWords.add(tempList);
     }
-
-    public void AssignKeyWords(){
-        for(int i = 0; i < learningData.size(); ++i){
-            learningData.get(i).keyWords = this.keyWords;
-        }
-        for(int i = 0; i < testingData.size(); ++i){
-            testingData.get(i).keyWords = this.keyWords;
-        }
-    }
-
 }

@@ -21,17 +21,53 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Gui/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-221">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="285">
+              <caret line="103" column="1" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/SimilarityMeasures/NiewiadomskiNGramMeasure.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/KnnAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="-613">
+              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#372#373#0" expanded="true" />
+                <element signature="e#408#409#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Extraction/ExtractionManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1394">
+              <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
+              <folding>
+                <element signature="e#1022#1023#0" expanded="true" />
+                <element signature="e#1053#1054#0" expanded="true" />
+                <element signature="e#1142#1143#0" expanded="true" />
+                <element signature="e#1177#1178#0" expanded="true" />
+                <element signature="e#1223#1224#0" expanded="true" />
+                <element signature="e#1257#1258#0" expanded="true" />
+                <element signature="e#1312#1313#0" expanded="true" />
+                <element signature="e#1352#1353#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Data/XmlSerializator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -39,116 +75,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Data/DataNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
+            <state relative-caret-position="614">
               <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/NumberOfKeywords1.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Data/DeserializedDataContainer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/FeatureVectorWithCountry.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/FeatureVectorCreator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="24" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#217#218#0" expanded="true" />
-                <element signature="e#266#267#0" expanded="true" />
-                <element signature="e#589#590#0" expanded="true" />
-                <element signature="e#616#617#0" expanded="true" />
-              </folding>
+              <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/NumberOfKeywords2.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Metrics/EuclideanMetric.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#236#237#0" expanded="true" />
-                <element signature="e#286#287#0" expanded="true" />
-                <element signature="e#299#300#0" expanded="true" />
-                <element signature="e#326#327#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-72">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/NumberOfKeywords3.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/SimilarityMeasures/NGramMeasure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#236#237#0" expanded="true" />
-                <element signature="e#286#287#0" expanded="true" />
-                <element signature="e#299#300#0" expanded="true" />
-                <element signature="e#326#327#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/NumberOfKeywords4.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#241#242#0" expanded="true" />
-                <element signature="e#291#292#0" expanded="true" />
-                <element signature="e#299#300#0" expanded="true" />
-                <element signature="e#326#327#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/NumberOfKeywords5.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#234#235#0" expanded="true" />
-                <element signature="e#284#285#0" expanded="true" />
-                <element signature="e#300#301#0" expanded="true" />
-                <element signature="e#327#328#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/NumberOfKeywords6.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#241#242#0" expanded="true" />
-                <element signature="e#291#292#0" expanded="true" />
-                <element signature="e#299#300#0" expanded="true" />
-                <element signature="e#326#327#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/MediumWordCounter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" selection-start-line="8" selection-end-line="14" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -179,7 +152,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Logic/Extraction/HighestFrequencyWord.java" />
         <option value="$PROJECT_DIR$/src/main/java/Logic/Features/NumberOfKeywords.java" />
         <option value="$PROJECT_DIR$/src/main/java/Logic/Extraction/TFIDF.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Logic/Extraction/ExtractionManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/Logic/Features/NumberOfKeywords1.java" />
         <option value="$PROJECT_DIR$/src/main/java/Logic/Features/NumberOfKeywords2.java" />
         <option value="$PROJECT_DIR$/src/main/java/Logic/Features/NumberOfKeywords3.java" />
@@ -187,6 +159,7 @@
         <option value="$PROJECT_DIR$/src/main/java/Logic/Features/NumberOfKeywords5.java" />
         <option value="$PROJECT_DIR$/src/main/java/Logic/Features/NumberOfKeywords6.java" />
         <option value="$PROJECT_DIR$/src/main/java/Data/DataNode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Logic/Extraction/ExtractionManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/Gui/Main.java" />
       </list>
     </option>
@@ -241,14 +214,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KSR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KSR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Gui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -258,15 +223,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KSR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KSR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="Classificators" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="KSR" type="b2602c69:ProjectViewProjectNode" />
@@ -285,24 +241,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Logic" type="462c0819:PsiDirectoryNode" />
               <item name="Features" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KSR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KSR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="Metrics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KSR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KSR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="SimilarityMeasures" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -380,12 +318,12 @@
       <workItem from="1555070475806" duration="110000" />
       <workItem from="1555071333632" duration="1402000" />
       <workItem from="1555155835737" duration="31491000" />
-      <workItem from="1555235296772" duration="16977000" />
+      <workItem from="1555235296772" duration="24162000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67067000" />
+    <option name="totallyTimeSpent" value="74252000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -410,7 +348,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49924356" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5514372" weight="0.3289689" />
-      <window_info anchor="bottom" auto_hide="true" id="Debug" order="3" sideWeight="0.51134646" weight="0.39934534" />
+      <window_info anchor="bottom" auto_hide="true" id="Debug" order="3" sideWeight="0.5098336" visible="true" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49848714" weight="0.3289689" />
@@ -418,8 +356,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49924356" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.48865354" side_tool="true" visible="true" weight="0.39934534" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4977307" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.49016643" side_tool="true" visible="true" weight="0.39934534" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4969743" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -439,7 +377,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Gui/Main.java</url>
-          <line>100</line>
+          <line>102</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
@@ -451,7 +389,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Logic/Extraction/ExtractionManager.java</url>
-          <line>36</line>
+          <line>24</line>
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
@@ -548,24 +486,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Extraction/HighestFrequencyWord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
-          <folding>
-            <element signature="e#162#163#0" expanded="true" />
-            <element signature="e#210#211#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Extraction/ExtractionDataPreparer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/ShortWordCounter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -597,27 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Extraction/DataStemmer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Data/DeserializedDataContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Data/XmlSerializator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/LongWordCounter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -645,69 +544,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/KnnAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#372#373#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/FeatureVectorWithCountry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Classificators/FeatureClassificator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Extraction/TFIDF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
-          <folding>
-            <element signature="e#112#113#0" expanded="true" />
-            <element signature="e#148#149#0" expanded="true" />
-            <element signature="e#209#210#0" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/IFeature.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/FeatureVectorCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Extraction/ExtractionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding>
-            <element signature="e#410#411#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -805,13 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Data/DataNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Logic/SimilarityMeasures/NiewiadomskiNGramMeasure.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -819,10 +652,184 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Classificators/SimilarityClassificator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Classificators/FeatureClassificator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Extraction/DataStemmer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Extraction/ExtractionDataPreparer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Extraction/HighestFrequencyWord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Extraction/TFIDF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="818">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="e#112#113#0" expanded="true" />
+            <element signature="e#148#149#0" expanded="true" />
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Metrics/EuclideanMetric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/SimilarityMeasures/NGramMeasure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/FeatureVectorWithCountry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/FeatureVectorCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/KnnAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-613">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Data/DeserializedDataContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Data/XmlSerializator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/bartek2/Desktop/ksrAKT/KSR/src/main/java">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src/main/java</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="240.0" y="240.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/Logic">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>Logic</OriginalElement>
+          <nodes>
+            <node x="" y="">Logic.SimilarityMeasures</node>
+            <node x="" y="">Logic.KnnAlgorithm</node>
+            <node x="" y="">Logic.Extraction</node>
+            <node x="" y="">Logic.Features</node>
+            <node x="" y="">Logic.FeatureVectorCreator</node>
+            <node x="" y="">Logic.FeatureVectorWithCountry</node>
+            <node x="" y="">Logic.Metrics</node>
+            <node x="" y="">Logic.Classificators</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.7764127764127764" x="171.5" y="222.5" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Data/DataNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="614">
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Extraction/ExtractionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
+          <folding>
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1053#1054#0" expanded="true" />
+            <element signature="e#1142#1143#0" expanded="true" />
+            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="e#1223#1224#0" expanded="true" />
+            <element signature="e#1257#1258#0" expanded="true" />
+            <element signature="e#1312#1313#0" expanded="true" />
+            <element signature="e#1352#1353#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Gui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="285">
+          <caret line="103" column="1" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
