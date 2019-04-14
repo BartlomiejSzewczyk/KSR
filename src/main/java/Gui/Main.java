@@ -15,15 +15,11 @@ public class Main {
         System.out.println(extractionManager.getLearningData().get(0).words);
         System.out.println(extractionManager.getLearningData().get(0).place);
         TFIDF tfidf = new TFIDF();
-        double temp = 0;
-        for(int i = 0; i < extractionManager.getTestingData().get(3).words.size(); ++i){
-            temp = tfidf.tfIdf(extractionManager.getTestingData().get(3).words, extractionManager.getLearningDataWords(), extractionManager.getTestingData().get(3).words.get(i));
-        }
-        tfidf.ChooseMainWordsForCountries(extractionManager, "usa", 4);
-        tfidf.ChooseMainWordsForCountries(extractionManager, "uk", 4);
-        tfidf.ChooseMainWordsForCountries(extractionManager, "canada", 4);
-        tfidf.ChooseMainWordsForCountries(extractionManager, "japan", 4);
-        tfidf.ChooseMainWordsForCountries(extractionManager, "france", 4);
-        tfidf.ChooseMainWordsForCountries(extractionManager, "west-germany", 4);
+        tfidf.ChooseMainWordsForCountries(extractionManager, "canada", 20);
+        tfidf.ChooseMainWordsForCountries(extractionManager, "usa", 20);
+        tfidf.ChooseMainWordsForCountries(extractionManager, "uk", 20);
+        tfidf.ChooseMainWordsForCountries(extractionManager, "france", 20);
+        tfidf.ChooseMainWordsForCountries(extractionManager, "japan", 20);
+        tfidf.ChooseMainWordsForCountries(extractionManager, "west-germany", 20);
     }
 }

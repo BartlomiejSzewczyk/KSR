@@ -4,12 +4,18 @@ import Logic.Extraction.ExtractionManager;
 
 import java.util.*;
 
-public class TFIDF {
+public class TFIDF implements IFeature{
+
+    public List<String> getListMainWords() {
+        return listMainWords;
+    }
 
     public List<String> listMainWords;
+    public List<List<String>> listAllDocs;
 
     public TFIDF(){
         listMainWords = new ArrayList<>();
+        listAllDocs = new ArrayList<>();
     }
 
     public double tf(List<String> doc, String term) {
@@ -37,14 +43,12 @@ public class TFIDF {
 
 
     public double tfIdf(List<String> doc, List<List<String>> docs, String term) {
-        double t1 = tf(doc, term);
-        double t2 = idf(docs, term);
         return tf(doc, term) * idf(docs, term);
 
     }
 
     public void ChooseMainWordsForCountries(ExtractionManager extractionManager, String country, int numberOfWords){
-        Map<String, Double> mapCountriesWords = new HashMap<>();
+        /*Map<String, Double> mapCountriesWords = new HashMap<>();
         for(int i = 0; i < extractionManager.getLearningData().size(); ++i){
             if(extractionManager.getLearningData().get(i).place.equals(country)){
                 for(int j = 0; j < extractionManager.getLearningData().get(i).words.size(); ++j){
@@ -65,7 +69,72 @@ public class TFIDF {
                     listMainWords.add(entry.getKey());
                 }
             }
+        }*/
+
+
+        Map<String, Double> mapCountriesWords = new HashMap<String, Double>();
+        for(int i = 0; i < extractionManager.getLearningData().size(); ++i){
+            if(extractionManager.getLearningData().get(i).place.equals(country)){
+                for(int j = 0; j < extractionManager.getLearningData().get(i).words.size(); ++j){
+                    double tempCoefficient = tfIdf(extractionManager.getLearningData().get(i).words, extractionManager.getLearningDataWords(), extractionManager.getLearningData().get(i).words.get(j));
+                    if(mapCountriesWords.containsKey(extractionManager.getLearningData().get(i).words.get(j))){
+                        if(tempCoefficient < mapCountriesWords.get(extractionManager.getLearningData().get(i).words.get(j))){
+                            mapCountriesWords.put(extractionManager.getLearningData().get(i).words.get(j), tempCoefficient);
+                        }
+                    }
+                    mapCountriesWords.put(extractionManager.getLearningData().get(i).words.get(j), tempCoefficient);
+                }
+            }
+            System.out.println(i);
         }
+        sortMap(mapCountriesWords, listMainWords, numberOfWords);
     }
 
+    public <String, Double extends Comparable<Double>> Map <String, Double> sortMap(final Map<String, Double> mapCountriesWords, List<String> listMainWords, int numberOfWords)
+    {
+        Comparator<String> valueComparator = new Comparator<String>()
+        {
+            public int compare(String o1, String o2)
+            {
+                int compare = mapCountriesWords.get(o1).compareTo(mapCountriesWords.get(o2));
+                if(compare == 0)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return compare;
+                }
+            }
+        };
+        Map<String, Double> sortedByValues = new TreeMap<String, Double>(Collections.reverseOrder(valueComparator));
+        sortedByValues.putAll(mapCountriesWords);
+        for (Map.Entry<String, Double> entry : sortedByValues.entrySet()) {
+            if(mapCountriesWords.size() > numberOfWords){
+                mapCountriesWords.remove(entry.getKey());
+            }
+        }
+        for (Map.Entry<String, Double> entry : mapCountriesWords.entrySet()) {
+            listMainWords.add(entry.getKey());
+        }
+        return sortedByValues;
+    }
+
+    @Override
+    public double count(List<String> listOfWords) {
+        List<Double> vectorFeatures = new ArrayList<>();
+        for(int i = 0; i < listOfWords.size(); ++i){
+            for(int j = 0; j < listMainWords.size(); ++j){
+                if(listOfWords.get(i).equals(listMainWords.get(j))){
+                    vectorFeatures.add(tfIdf(listOfWords, listAllDocs, listMainWords.get(j)));
+                }
+            }
+        }
+        return 0;
+    }
+
+    @Override
+    public Map<String, Integer> count(Map<List<String>, String> data) {
+        return null;
+    }
 }

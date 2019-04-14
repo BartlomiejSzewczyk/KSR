@@ -12,14 +12,12 @@ public class ExtractionManager {
     private List<DataNode> learningData;
     private List<DataNode> testingData;
     private List<List<String>> learningDataWords;
-    private List<String> listDataWords;
 
     public ExtractionManager(int percentToLearn)
     {
         learningData = new ArrayList<>();
         testingData = new ArrayList<>();
         learningDataWords = new ArrayList<>();
-        listDataWords = new ArrayList<>();
         DeserializedDataContainer dataContainer = readDataFromXml();
         splitDataToLearnAndTest(dataContainer, percentToLearn);
         deleteStopwords(learningData);
@@ -69,7 +67,6 @@ public class ExtractionManager {
     public void createLearningDataWords()
     {
         for(int i = 0; i < learningData.size(); ++i){
-            listDataWords.clear();
             List<String> temp = new ArrayList<>(learningData.get(i).words);
             learningDataWords.add(temp);
         }
