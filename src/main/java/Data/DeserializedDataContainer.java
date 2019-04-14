@@ -27,7 +27,7 @@ public class DeserializedDataContainer {
     public void setDeserializedData(String body, String place) {
         DataNode node = new DataNode();
         node.body = body;
-        node.place = place;
+        node.label = place;
         this.deserializedData.add(node);
 
     }

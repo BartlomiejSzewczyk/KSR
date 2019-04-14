@@ -8,8 +8,6 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -74,7 +72,7 @@ public class XmlSerializator {
                     for(int j=0; j<element.getElementsByTagName("TOPICS").getLength(); j++)
                         dataNode.topics.add(element.getElementsByTagName("TOPICS").item(j).getTextContent());
 
-                    dataNode.place = element.getElementsByTagName("PLACES").item(0).getFirstChild().getTextContent();
+                    dataNode.label = element.getElementsByTagName("PLACES").item(0).getFirstChild().getTextContent();
 
                     for(int j=0; j<element.getElementsByTagName("PEOPLE").getLength(); j++)
                         dataNode.people.add(element.getElementsByTagName("PEOPLE").item(j).getTextContent());

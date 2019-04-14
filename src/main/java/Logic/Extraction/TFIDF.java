@@ -47,7 +47,7 @@ public class TFIDF{
 
         /*Map<String, Double> mapCountriesWords = new HashMap<>();
         for(int i = 0; i < extractionManager.getLearningData().size(); ++i){
-            if(extractionManager.getLearningData().get(i).place.equals(country)){
+            if(extractionManager.getLearningData().get(i).label.equals(country)){
                 for(int j = 0; j < extractionManager.getLearningData().get(i).stemmedWords.size(); ++j){
                     if(mapCountriesWords.containsKey(extractionManager.getLearningData().get(i).stemmedWords.get(j))){
                         mapCountriesWords.put(extractionManager.getLearningData().get(i).stemmedWords.get(j), mapCountriesWords.get(extractionManager.getLearningData().get(i).stemmedWords.get(j)) +1);
@@ -70,7 +70,7 @@ public class TFIDF{
         listMainWords.clear();
         Map<String, Double> mapCountriesWords = new HashMap<String, Double>();
         for(int i = 0; i < extractionManager.getLearningData().size(); ++i){
-            if(extractionManager.getLearningData().get(i).place.equals(country)){
+            if(extractionManager.getLearningData().get(i).label.equals(country)){
                 for(int j = 0; j < extractionManager.getLearningData().get(i).stemmedWords.size(); ++j){
                     double tempCoefficient = tfIdf(extractionManager.getLearningData().get(i).stemmedWords, extractionManager.getLearningDataWords(), extractionManager.getLearningData().get(i).stemmedWords.get(j));
                     if(mapCountriesWords.containsKey(extractionManager.getLearningData().get(i).stemmedWords.get(j))){

@@ -51,7 +51,7 @@ public class KnnAlgorithm {
 
         List<DataNode> firstKNodes = sorted.keySet().stream().limit(kValue).collect(toList());
 
-        var sortedGroupByCountry = firstKNodes.stream().collect(Collectors.groupingBy(fv -> fv.place, Collectors.counting()));
+        var sortedGroupByCountry = firstKNodes.stream().collect(Collectors.groupingBy(fv -> fv.label, Collectors.counting()));
         String chosenCountry = sortedGroupByCountry.entrySet().stream().max((e1, e2) -> e1.getValue()>e2.getValue() ? 1 : -1).get().getKey();
 
         return chosenCountry;

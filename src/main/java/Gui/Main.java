@@ -46,7 +46,9 @@ public class Main {
 //                new TextLengthCounter(),
 //                new UpperCaseWordCounter()
 
+
 //                new NiewiadomskiNGramMeasure()
+
         );
 
         IMetric metric = new EuclideanMetric();
