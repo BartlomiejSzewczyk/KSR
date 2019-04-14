@@ -9,7 +9,7 @@ import Logic.Metrics.IMetric;
 
 import java.util.List;
 
-public class FeatureClassificator {
+public class FeatureClassificator implements IClassificator{
     private IMetric metric;
     private KnnAlgorithm algorithm;
     private List<IFeature> chosenFeatures;
