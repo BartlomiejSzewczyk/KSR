@@ -1,6 +1,7 @@
 package Gui;
 
 import Logic.Extraction.ExtractionManager;
+import Logic.Extraction.HighestFrequencyWord;
 import Logic.Extraction.TFIDF;
 
 public class Main {
@@ -25,5 +26,8 @@ public class Main {
         tfidf.ChooseMainWordsForCountries(extractionManager, "japan", 20);
         extractionManager.createLearningDataWords("west-germany");
         tfidf.ChooseMainWordsForCountries(extractionManager, "west-germany", 20);*/
+        HighestFrequencyWord highestFrequencyWord = new HighestFrequencyWord();
+        extractionManager.createLearningDataWords("canada");
+        highestFrequencyWord.ChooseWords(extractionManager, 20, "canada");
     }
 }
