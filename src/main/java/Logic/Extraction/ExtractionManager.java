@@ -36,25 +36,22 @@ public class ExtractionManager {
         return learningData;
     }
 
-    private List<List<String>> keyWords;
+    public List<DataNode> getTestingData() {
+        return testingData;
+    }
 
-        public List<DataNode> getLearningData() {
-            return learningData;
-        }
+    public List<List<String>> getLearningDataWords(){
+        return learningDataWords;
+    }
 
-        public List<DataNode> getTestingData() {
-            return testingData;
-        }
+    public void deleteStopwords(List<DataNode> dataContainer)
+    {
+        StopwordsDeleter deleter = new StopwordsDeleter();
 
-        public List<List<String>> getLearningDataWords(){
-            return learningDataWords;
-        }
+        deleter.deleteStopwords(dataContainer);
 
-        public void deleteStopwords(List<DataNode> dataContainer)
-        {
-            StopwordsDeleter deleter = new StopwordsDeleter();
+    }
 
-<<<<<<< HEAD
     public DeserializedDataContainer readDataFromXml(ISerializator serializator, String label) throws NoSuchFieldException, IllegalAccessException {
         LabelsTypes lt = new LabelsTypes();
         Field f = lt.getClass().getDeclaredField(label);
@@ -62,19 +59,16 @@ public class ExtractionManager {
         LabelsTypes.chosen = (List<String>)f.get(lt);
 
         DeserializedDataContainer dataContainer = serializator.readXML(serializator.getAllFilesNumbers(), label);
-=======
-            deleter.deleteStopwords(dataContainer);
->>>>>>> a9009492b2c3b5864a56d9e9d91344e6c739ffa5
 
-        }
+        return dataContainer;
+    }
 
-        public DeserializedDataContainer readDataFromXml(ISerializator serializator, String label) throws NoSuchFieldException, IllegalAccessException {
-            LabelsTypes lt = new LabelsTypes();
-            Field f = lt.getClass().getDeclaredField(label);
-            f.setAccessible(true);
-            LabelsTypes.chosen = (List<String>)f.get(lt);
+    public void splitDataToLearnAndTest(DeserializedDataContainer dataContainer, int percentToLearn)
+    {
+        ExtractionDataPreparer dataPreparer= new ExtractionDataPreparer(dataContainer, percentToLearn);
+        dataPreparer.splitDataToLearnAndTest(learningData, testingData);
+    }
 
-<<<<<<< HEAD
     public void createLearningDataWords(String label)
     {
         learningDataWords.clear();
@@ -91,33 +85,3 @@ public class ExtractionManager {
         keyWords.add(tempList);
     }
 }
-=======
-            DeserializedDataContainer dataContainer = serializator.readXML(serializator.getAllFilesNumbers(), label);
-
-            return dataContainer;
-        }
-
-        public void splitDataToLearnAndTest(DeserializedDataContainer dataContainer, int percentToLearn)
-        {
-            ExtractionDataPreparer dataPreparer= new ExtractionDataPreparer(dataContainer, percentToLearn);
-            dataPreparer.splitDataToLearnAndTest(learningData, testingData);
-        }
-
-        public void createLearningDataWords(String label)
-        {
-            learningDataWords.clear();
-            for(int i = 0; i < learningData.size(); ++i){
-                if(learningData.get(i).label.equals(label)){
-                    List<String> temp = new ArrayList<>(learningData.get(i).stemmedWords);
-                    learningDataWords.add(temp);
-                }
-            }
-        }
-
-        public void CreateKeyWordsList(List<String> wordList){
-            List<String> tempList = new ArrayList<>(wordList);
-            keyWords.add(tempList);
-        }
-}
-
->>>>>>> a9009492b2c3b5864a56d9e9d91344e6c739ffa5
