@@ -12,11 +12,18 @@ public class ExtractionManager {
     private List<DataNode> testingData;
     private List<List<String>> learningDataWords;
 
+    public List<List<String>> getKeyWords() {
+        return keyWords;
+    }
+
+    private List<List<String>> keyWords;
+
     public ExtractionManager(int percentToLearn)
     {
         learningData = new ArrayList<>();
         testingData = new ArrayList<>();
         learningDataWords = new ArrayList<>();
+        keyWords = new ArrayList<>();
         DeserializedDataContainer dataContainer = readDataFromXml();
         splitDataToLearnAndTest(dataContainer, percentToLearn);
         deleteStopwords(learningData);
@@ -25,6 +32,7 @@ public class ExtractionManager {
         DataStemmer stemmer = new DataStemmer();
         stemmer.stemmizeData(learningData);
         stemmer.stemmizeData(testingData);
+        AssignKeyWords();
 
     }
 
@@ -70,6 +78,20 @@ public class ExtractionManager {
                 List<String> temp = new ArrayList<>(learningData.get(i).stemmedWords);
                 learningDataWords.add(temp);
             }
+        }
+    }
+
+    public void CreateKeyWordsList(List<String> wordList){
+        List<String> tempList = new ArrayList<>(wordList);
+        keyWords.add(tempList);
+    }
+
+    public void AssignKeyWords(){
+        for(int i = 0; i < learningData.size(); ++i){
+            learningData.get(i).keyWords = this.keyWords;
+        }
+        for(int i = 0; i < testingData.size(); ++i){
+            testingData.get(i).keyWords = this.keyWords;
         }
     }
 

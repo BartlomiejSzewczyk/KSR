@@ -1,17 +1,14 @@
 package Gui;
 
 import Data.DataNode;
-import Logic.Classificators.FeatureClassificator;
 import Logic.Classificators.IClassificator;
 import Logic.Classificators.SimilarityClassificator;
 import Logic.Extraction.ExtractionManager;
-import Logic.Extraction.HighestFrequencyWord;
-import Logic.Extraction.TFIDF;
-import Logic.Features.*;
 import Logic.Metrics.EuclideanMetric;
 import Logic.Metrics.IMetric;
 import Logic.SimilarityMeasures.ISimilarityMeasure;
 import Logic.SimilarityMeasures.NGramMeasure;
+//import Logic.SimilarityMeasures.NiewiadomskiNGramMeasure;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -26,7 +23,7 @@ public class Main {
 //        System.out.println(extractionManager.getTestingData().size());
 //
 //        System.out.println(extractionManager.getLearningData().get(0).stemmedWords);
-//        System.out.println(extractionManager.getLearningData().get(0).place);
+//        System.out.println(extractionManager.getLearningData().get(0).label);
 //        TFIDF tfidf = new TFIDF();
         /*extractionManager.createLearningDataWords("uk");
         tfidf.ChooseMainWordsForCountries(extractionManager, "uk", 20);
@@ -49,11 +46,11 @@ public class Main {
 //                new TextLengthCounter(),
 //                new UpperCaseWordCounter()
 
-                new NGramMeasure(3)
+//                new NiewiadomskiNGramMeasure()
         );
 
         IMetric metric = new EuclideanMetric();
-        IClassificator clas = new SimilarityClassificator(extractionManager.getLearningData(), chosenFeatures, 7);
+        IClassificator clas = new SimilarityClassificator(extractionManager.getLearningData(), chosenFeatures, 3);
 
         Map<String, Integer> howManyGood = new HashMap<>()
         {{
@@ -77,7 +74,7 @@ public class Main {
         int k = 1;
         for(DataNode node : extractionManager.getTestingData())
         {
-            String shouldBe = node.place;
+            String shouldBe = node.label;
             String classified = clas.classify(node);
             if(shouldBe.equals(classified))
             {
