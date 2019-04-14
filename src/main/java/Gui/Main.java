@@ -1,9 +1,7 @@
 package Gui;
 
 import Logic.Extraction.ExtractionManager;
-import Logic.Features.TFIDF;
-
-import java.util.*;
+import Logic.Extraction.TFIDF;
 
 public class Main {
 

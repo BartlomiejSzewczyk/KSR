@@ -1,10 +1,11 @@
-package Logic.Features;
+package Logic.Extraction;
 
 import Logic.Extraction.ExtractionManager;
+import Logic.Features.IFeature;
 
 import java.util.*;
 
-public class TFIDF implements IFeature{
+public class TFIDF implements IFeature {
 
     public List<String> getListMainWords() {
         return listMainWords;
