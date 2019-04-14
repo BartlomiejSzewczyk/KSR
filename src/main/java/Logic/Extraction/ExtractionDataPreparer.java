@@ -2,6 +2,8 @@ package Logic.Extraction;
 
 import Data.DataNode;
 import Data.DeserializedDataContainer;
+import Data.LabelsTypes;
+import Data.XmlSerializator;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,25 +26,21 @@ public class ExtractionDataPreparer {
     public void splitDataToLearnAndTest(List<DataNode> learningData,
                                         List<DataNode> testingData)
     {
-        Map<String, Integer> countCountries = new HashMap<>();
+        Map<String, Integer> countLabels = new HashMap<>();
         for(DataNode node : dataContainer.getDeserializedData()){
-            countCountries.putIfAbsent(node.label, 0);
-            countCountries.put(node.label, countCountries.get(node.label)+1);
+            countLabels.putIfAbsent(node.label, 0);
+            countLabels.put(node.label, countLabels.get(node.label)+1);
         }
 
-        Map<String, Integer> settedCountries = new HashMap<>()
-        {{
-            put("usa", 0);
-            put("canada", 0);
-            put("japan", 0);
-            put("uk", 0);
-            put("france", 0);
-            put("west-germany", 0);
-        }};
+        Map<String, Integer> settedLabels = new HashMap<>();
+        for(String s : LabelsTypes.chosen)
+        {
+            settedLabels.put(s, 0);
+        }
 
         for(DataNode node : dataContainer.getDeserializedData()){
-            String country = node.label;
-            if(settedCountries.get(country) < countCountries.get(country)*percentToLearn/100)
+            String label = node.label;
+            if(settedLabels.get(label) < countLabels.get(label)*percentToLearn/100)
             {
                 learningData.add(node);
             }
@@ -50,7 +48,7 @@ public class ExtractionDataPreparer {
             {
                 testingData.add(node);
             }
-            settedCountries.put(country, settedCountries.get(country)+1);
+            settedLabels.put(label, settedLabels.get(label)+1);
         }
     }
 }

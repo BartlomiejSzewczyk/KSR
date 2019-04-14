@@ -53,6 +53,7 @@ public class Main {
                 new FirstVowelWordCounter(),
                 new LastVowelWordCounter(),
                 // new LongWordCounter(),
+               // new LongWordCounter(),
                 //new MediumWordCounter(),
                 //new ShortWordCounter(),
                 new TextLengthCounter(),
