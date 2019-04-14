@@ -2,7 +2,7 @@ package Logic.Classificators;
 
 import Data.DataNode;
 import Logic.FeatureVectorCreator;
-import Logic.FeatureVectorWithCountry;
+import Logic.FeatureVectorWithLabel;
 import Logic.Features.IFeature;
 import Logic.KnnAlgorithm;
 import Logic.Metrics.IMetric;
@@ -13,7 +13,7 @@ public class FeatureClassificator implements IClassificator{
     private IMetric metric;
     private KnnAlgorithm algorithm;
     private List<IFeature> chosenFeatures;
-    private List<FeatureVectorWithCountry> vectors;
+    private List<FeatureVectorWithLabel> vectors;
     FeatureVectorCreator creator;
 
     public FeatureClassificator(List<DataNode> nodes, List<IFeature> chosenFeatures, int kValue, IMetric metric)
@@ -33,8 +33,8 @@ public class FeatureClassificator implements IClassificator{
 
     public String classify(DataNode node)
     {
-        FeatureVectorWithCountry vector = creator.createFeatureVector(node, chosenFeatures);
-        return algorithm.chooseCountry(vector, vectors, metric);
+        FeatureVectorWithLabel vector = creator.createFeatureVector(node, chosenFeatures);
+        return algorithm.chooseLabel(vector, vectors, metric);
     }
 
 

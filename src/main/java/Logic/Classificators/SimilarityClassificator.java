@@ -2,7 +2,6 @@ package Logic.Classificators;
 
 import Data.DataNode;
 import Logic.KnnAlgorithm;
-import Logic.Metrics.IMetric;
 import Logic.SimilarityMeasures.ISimilarityMeasure;
 
 import java.util.List;
@@ -21,7 +20,7 @@ public class SimilarityClassificator implements  IClassificator {
 
     @Override
     public String classify(DataNode node) {
-        String result = algorithm.chooseCountry(node, nodes, measures);
+        String result = algorithm.chooseLabel(node, nodes, measures);
         return result;
     }
 }
