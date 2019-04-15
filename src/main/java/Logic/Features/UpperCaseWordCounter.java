@@ -12,7 +12,7 @@ public class UpperCaseWordCounter implements IFeature {
             }
         }
 
-        return (double)howManyUpperCase;
+        return (double)howManyUpperCase/(double)listOfWords.size();
     }
 
     public Map<String, Integer> count(Map<List<String>, String> data)

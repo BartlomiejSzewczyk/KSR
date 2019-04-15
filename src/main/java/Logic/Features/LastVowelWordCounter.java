@@ -13,7 +13,7 @@ public class LastVowelWordCounter implements IFeature {
                 howManyVowelWord++;
             }
         }
-        return howManyVowelWord;
+        return howManyVowelWord/(double)listOfWords.size();
     }
 
     @Override

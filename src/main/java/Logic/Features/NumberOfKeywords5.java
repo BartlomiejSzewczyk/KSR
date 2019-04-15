@@ -22,7 +22,7 @@ public class NumberOfKeywords5 implements  IFeature {
                 }
             }
         }
-        return howManyKeyWords;
+        return howManyKeyWords/(double)listOfWords.size();
     }
 
     @Override

@@ -12,7 +12,7 @@ public class LongWordCounter implements IFeature {
                 howManyLongWords++;
             }
         }
-        return howManyLongWords;
+        return howManyLongWords/(double)listOfWords.size();
     }
 
     @Override

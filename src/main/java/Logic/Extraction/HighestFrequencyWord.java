@@ -11,6 +11,7 @@ public class HighestFrequencyWord {
     }
 
     public void ChooseWords(ExtractionManager extractionManager, int numberOfWords, String country){
+        listMainWords.clear();
         Map<String, Double> mapCountriesWords = new HashMap<>();
         for(int i = 0; i < extractionManager.getLearningData().size(); ++i){
             if(extractionManager.getLearningData().get(i).label.equals(country)){
@@ -35,5 +36,6 @@ public class HighestFrequencyWord {
                 }
             }
         }
+        extractionManager.CreateKeyWordsList(listMainWords);
     }
 }

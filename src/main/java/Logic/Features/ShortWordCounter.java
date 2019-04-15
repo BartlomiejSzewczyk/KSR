@@ -12,7 +12,7 @@ public class ShortWordCounter implements IFeature {
                 howManyShortWords++;
             }
         }
-        return howManyShortWords;
+        return howManyShortWords/(double)listOfWords.size();
     }
 
     @Override

@@ -8,6 +8,8 @@ import Logic.Classificators.FeatureClassificator;
 import Logic.Classificators.IClassificator;
 import Logic.Classificators.SimilarityClassificator;
 import Logic.Extraction.ExtractionManager;
+import Logic.Extraction.HighestFrequencyWord;
+import Logic.Extraction.TFIDF;
 import Logic.Features.*;
 import Logic.Metrics.EuclideanMetric;
 import Logic.Metrics.IMetric;
@@ -36,7 +38,12 @@ public class Main {
 //
         System.out.println(extractionManager.getLearningData().get(0).stemmedWords);
         System.out.println(extractionManager.getLearningData().get(0).label);
-//        TFIDF tfidf = new TFIDF();
+        TFIDF tfidf = new TFIDF();
+        HighestFrequencyWord highestFrequencyWord = new HighestFrequencyWord();
+        extractionManager.createLearningDataWords("hockey");
+        tfidf.ChooseMainWordsForCountries(extractionManager, "hockey", 20);
+        extractionManager.createLearningDataWords("basketball");
+        tfidf.ChooseMainWordsForCountries(extractionManager, "basketball", 20);
         /*extractionManager.createLearningDataWords("uk");
         tfidf.ChooseMainWordsForCountries(extractionManager, "uk", 20);
         extractionManager.createLearningDataWords("france");
@@ -52,9 +59,11 @@ public class Main {
         List<IFeature> chosenFeatures = Arrays.asList(
                 new FirstVowelWordCounter(),
                 new LastVowelWordCounter(),
-                // new LongWordCounter(),
-                //new MediumWordCounter(),
-                //new ShortWordCounter(),
+                new NumberOfKeywords1(extractionManager.getKeyWords()),
+                new NumberOfKeywords2(extractionManager.getKeyWords()),
+//                 new LongWordCounter(),
+//                new MediumWordCounter(),
+//                new ShortWordCounter(),
                 new TextLengthCounter(),
                 new UpperCaseWordCounter()
 

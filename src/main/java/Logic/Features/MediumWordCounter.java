@@ -12,7 +12,7 @@ public class MediumWordCounter implements IFeature {
                 howManyMediumWords++;
             }
         }
-        return howManyMediumWords;
+        return howManyMediumWords/(double)listOfWords.size();
     }
 
     @Override
