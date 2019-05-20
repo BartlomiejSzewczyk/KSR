@@ -3,16 +3,14 @@ package Logic.Features;
 import java.util.List;
 import java.util.Map;
 
-public class LongWordCounter implements IFeature {
+public class AverageLength implements IFeature {
     @Override
     public double count(List<String> listOfWords) {
-        double howManyLongWords = 0;
+        double length = 0;
         for (String word : listOfWords) {
-            if (word.length() > 9) {
-                howManyLongWords++;
-            }
+            length = length + word.length();
         }
-        return howManyLongWords/(double)listOfWords.size();
+        return length/(double)listOfWords.size();
     }
 
     @Override

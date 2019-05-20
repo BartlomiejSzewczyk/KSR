@@ -29,7 +29,7 @@ public class Main {
     public static void main(String[] args) {
         ExtractionManager extractionManager = null;
         try {
-            extractionManager = new ExtractionManager(60, new XmlSerializator(), "PLACES");
+            extractionManager = new ExtractionManager(40, new OwnDataSerializator(), "SPORT");
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -42,49 +42,73 @@ public class Main {
 //        System.out.println(extractionManager.getLearningData().get(0).label);
 
 //
-//        HighestFrequencyWord highestFrequencyWord = new HighestFrequencyWord();
-//        highestFrequencyWord.ChooseWords(extractionManager, 6, "usa");
-//        highestFrequencyWord.ChooseWords(extractionManager, 6, "uk");
-//        highestFrequencyWord.ChooseWords(extractionManager, 6, "canada");
-//        highestFrequencyWord.ChooseWords(extractionManager, 6, "france");
-//        highestFrequencyWord.ChooseWords(extractionManager, 6, "japan");
-//        highestFrequencyWord.ChooseWords(extractionManager, 6, "west-germany");
+        HighestFrequencyWord highestFrequencyWord = new HighestFrequencyWord();
+        highestFrequencyWord.ChooseWords(extractionManager, 6, "basketball");
+        highestFrequencyWord.ChooseWords(extractionManager, 6, "hockey");
+//        highestFrequencyWord.ChooseWords(extractionManager, 6, "gold");
+//        highestFrequencyWord.ChooseWords(extractionManager, 6, "cotton");
+//        highestFrequencyWord.ChooseWords(extractionManager, 6, "alum");
+//        highestFrequencyWord.ChooseWords(extractionManager, 6, "silver");
 
-
-        TFIDF tfidf = new TFIDF();
-        extractionManager.createLearningDataWords("usa");
-        tfidf.ChooseMainWordsForCountries(extractionManager, "usa", 6);
-        extractionManager.createLearningDataWords("uk");
-        tfidf.ChooseMainWordsForCountries(extractionManager, "uk", 6);
-        extractionManager.createLearningDataWords("canada");
-        tfidf.ChooseMainWordsForCountries(extractionManager, "canada", 6);
-        extractionManager.createLearningDataWords("france");
-        tfidf.ChooseMainWordsForCountries(extractionManager, "france", 6);
-        extractionManager.createLearningDataWords("japan");
-        tfidf.ChooseMainWordsForCountries(extractionManager, "japan", 6);
-        extractionManager.createLearningDataWords("west-germany");
-        tfidf.ChooseMainWordsForCountries(extractionManager, "west-germany", 6);
+//
+//        TFIDF tfidf = new TFIDF();
+//        extractionManager.createLearningDataWords("basketball");
+//        tfidf.ChooseMainWordsForCountries(extractionManager, "basketball", 6);
+//        extractionManager.createLearningDataWords("hockey");
+//        tfidf.ChooseMainWordsForCountries(extractionManager, "hockey", 6);
+//        extractionManager.createLearningDataWords("gold");
+//        tfidf.ChooseMainWordsForCountries(extractionManager, "gold", 6);
+//        extractionManager.createLearningDataWords("cotton");
+//        tfidf.ChooseMainWordsForCountries(extractionManager, "cotton", 6);
+//        extractionManager.createLearningDataWords("alum");
+//        tfidf.ChooseMainWordsForCountries(extractionManager, "alum", 6);
+//        extractionManager.createLearningDataWords("silver");
+//        tfidf.ChooseMainWordsForCountries(extractionManager, "silver", 6);
 
 
         List<IFeature> chosenFeatures = Arrays.asList(
-                new FirstVowelWordCounter(),
-                new LastVowelWordCounter(),
+//                new FirstVowelWordCounter(),
+//                new LastVowelWordCounter(),
+//                new MediumWordCounter(),
+
                 new NumberOfKeywords1(extractionManager.getKeyWords()),
                 new NumberOfKeywords2(extractionManager.getKeyWords()),
-                new NumberOfKeywords3(extractionManager.getKeyWords()),
-                new NumberOfKeywords4(extractionManager.getKeyWords()),
-                new NumberOfKeywords5(extractionManager.getKeyWords()),
-                new NumberOfKeywords6(extractionManager.getKeyWords()),
-                 new LongWordCounter(),
-                new MediumWordCounter(),
-                new ShortWordCounter(),
-                new TextLengthCounter(),
-                new UpperCaseWordCounter()
+
+//                new NumberOfKeywords3(extractionManager.getKeyWords()),
+//                new NumberOfKeywords4(extractionManager.getKeyWords()),
+//                new NumberOfKeywords5(extractionManager.getKeyWords()),
+//                new NumberOfKeywords6(extractionManager.getKeyWords()),
+
+                new LongWordCounter(),
+                new ShortWordCounter(extractionManager.getKeyWords()),
+                new TextLengthCounter(),//byly
+                new Keywords25(extractionManager.getKeyWords()),//byly
+                new Keywords252(extractionManager.getKeyWords()),//byly
+//                new Keywords253(extractionManager.getKeyWords()),//byly
+//                new Keywords254(extractionManager.getKeyWords()),//byly
+//                new Keywords255(extractionManager.getKeyWords()),//byly
+//                new Keywords256(extractionManager.getKeyWords()),//byly
+
+                new Keywords75(extractionManager.getKeyWords()),
+                new Keywords752(extractionManager.getKeyWords()),
+
+//                new Keywords753(extractionManager.getKeyWords()),
+//                new Keywords754(extractionManager.getKeyWords()),
+//                new Keywords755(extractionManager.getKeyWords()),
+//                new Keywords756(extractionManager.getKeyWords()),
+                new MostCommonKeyword(extractionManager.getKeyWords()),//byly
+                new MostCommonKeyword2(extractionManager.getKeyWords()),//byly
+//                new MostCommonKeyword4(extractionManager.getKeyWords()),//byly
+//                new MostCommonKeyword5(extractionManager.getKeyWords()),//byly
+//                new MostCommonKeyword6(extractionManager.getKeyWords()),//byly
+//                new MostCommonKeywords3(extractionManager.getKeyWords()),//byly
+                new UpperCaseWordCounter(extractionManager.getKeyWords())//byly
 
 //                new NiewiadomskiNGramMeasure()
         );
 
-
+        int dobrze = 0;
+        int zle = 0;
         IMetric metric = new EuclideanMetric();
         int kk = 0;
         for(int j = 0; j < 5; ++j){
@@ -103,7 +127,7 @@ public class Main {
             if(j == 4){
                 kk = 20;
             }
-            for(int i = 0; i < 3; ++i){
+            for(int i = 0; i < 1; ++i){
                 if(i == 0){
                     metric = new EuclideanMetric();
                 }
@@ -142,19 +166,26 @@ public class Main {
                     }
 //            System.out.println(shouldBe + "    " + classified);
                 }
-                System.out.println("good: ");
+//                System.out.println("good: ");
                 int a = 0;
                 int b = 0;
                 for(Map.Entry e : howManyGood.entrySet()){
-                    System.out.println(e.getKey() + "    " + e.getValue());
+//                    System.out.println(e.getKey() + "    " + e.getValue());
                     a += (int)e.getValue();
+                    dobrze += (int)e.getValue();
                 }
-                System.out.println("bad: ");
+//                System.out.println("bad: ");
                 for(Map.Entry e : howManyBad.entrySet()){
-                    System.out.println(e.getKey() + "    " + e.getValue());
+//                    System.out.println(e.getKey() + "    " + e.getValue());
                     b += (int)e.getValue();
+                    zle += (int)e.getValue();
                 }
                 System.out.println("Procent: " + (double)a/(double)(a+b));
+                System.out.println("Dobrze: " + dobrze);
+                System.out.println("Zle: " + zle);
+                System.out.println();
+                dobrze = 0;
+                zle = 0;
             }
         }
 //        HighestFrequencyWord highestFrequencyWord = new HighestFrequencyWord();

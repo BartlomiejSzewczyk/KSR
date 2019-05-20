@@ -3,27 +3,28 @@ package Logic.Features;
 import java.util.List;
 import java.util.Map;
 
-public class NumberOfKeywords2 implements IFeature {
+public class ShortWordCounter2 implements IFeature {
+
 
     private List<List<String>> listOfKeyWord;
-    public NumberOfKeywords2(List<List<String>> listOfKeyWord){
+    public ShortWordCounter2(List<List<String>> listOfKeyWord){
         this.listOfKeyWord = listOfKeyWord;
     }
 
     @Override
     public double count(List<String> listOfWords) {
-        double howManyKeyWords = 0;
-        if(listOfKeyWord.get(1).size() > 0){
-            for (String word : listOfWords) {
-                for(int i = 0; i < listOfKeyWord.get(1).size() ; ++i){
+
+        double howManyShortWords = 0;
+        for (String word : listOfWords) {
+            if (word.length() <= 3) {
+                for(int i = 0; i < listOfKeyWord.get(1).size(); ++i){
                     if(word.equals(listOfKeyWord.get(1).get(i))){
-                        ++howManyKeyWords;
+                        howManyShortWords++;
                     }
                 }
             }
         }
-        return howManyKeyWords;
-//        return howManyKeyWords/(double)listOfWords.size();
+        return howManyShortWords/(double)listOfWords.size();
     }
 
     @Override

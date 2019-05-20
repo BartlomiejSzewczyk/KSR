@@ -3,10 +3,10 @@ package Logic.Features;
 import java.util.List;
 import java.util.Map;
 
-public class NumberOfKeywords4 implements IFeature {
+public class DensityOfKeywords4 implements IFeature {
 
     private List<List<String>> listOfKeyWord;
-    public NumberOfKeywords4(List<List<String>> listOfKeyWord){
+    public DensityOfKeywords4(List<List<String>> listOfKeyWord){
         this.listOfKeyWord = listOfKeyWord;
     }
 
@@ -22,10 +22,8 @@ public class NumberOfKeywords4 implements IFeature {
                 }
             }
         }
-        return howManyKeyWords;
-//        return howManyKeyWords/(double)listOfWords.size();
+        return howManyKeyWords/(double)listOfWords.size();
     }
-
     @Override
     public Map<String, Integer> count(Map<List<String>, String> data) {
         return null;
