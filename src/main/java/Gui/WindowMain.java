@@ -377,6 +377,7 @@ public class WindowMain extends Application {
         try{
             category = chooseDataComboBox.getValue().toString();
             n = Integer.parseInt(chooseNTextField.getText());
+            k = Integer.parseInt(chooseKTextField.getText());
             percent = Integer.parseInt(choosePercentDataTextField.getText());
             listFeatures.clear();
             if(checkBox11.isSelected()){
@@ -422,8 +423,8 @@ public class WindowMain extends Application {
         if(checkBox11.isSelected()){
             chosenMeasures.add(new NGramMeasure(n));
         }
-//        IClassificator clas = new SimilarityClassificator(extractionManager.getLearningData(), chosenMeasures, k);
-//        calculateSummary(extractionManager,clas);
+        IClassificator clas = new SimilarityClassificator(extractionManager.getLearningData(), chosenMeasures, k);
+        calculateSummary(extractionManager,clas);
     }
 
     private void result() {
