@@ -7,6 +7,7 @@ import Data.XmlSerializator;
 import Logic.Classificators.FeatureClassificator;
 import Logic.Classificators.IClassificator;
 import Logic.Classificators.SimilarityClassificator;
+import Logic.Extraction.DataStemmer;
 import Logic.Extraction.ExtractionManager;
 import Logic.Extraction.HighestFrequencyWord;
 import Logic.Extraction.TFIDF;
@@ -33,6 +34,9 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
+import java.io.File;
 import java.util.*;
 
 public class WindowMain extends Application {
@@ -74,6 +78,8 @@ public class WindowMain extends Application {
     private CheckBox checkBox8 = new CheckBox();
     private CheckBox checkBox11 = new CheckBox();
     private CheckBox checkBox22 = new CheckBox();
+    private TextField settingsPath = new TextField();
+    private final JFileChooser fileChooser = new JFileChooser();
     private TitledPane chooseFeaturesTitledPane;
     private String category;
     private String extraction;
@@ -83,6 +89,9 @@ public class WindowMain extends Application {
     private Integer percent;
     private List<Integer> listFeatures = new ArrayList<>();
     private List<String> listNames = new ArrayList<>();
+    private ConfigurationManager manager;
+    private List<DataNode> coldStart;
+    private String settingFilePath = "";
     //endregion
 
     public static void main(String[] args) {
@@ -98,6 +107,7 @@ public class WindowMain extends Application {
                 System.exit(0);
             }
         });
+        manager = new ConfigurationManager();
         chooseData();
         chooseExtraction();
         chooseMetric();
@@ -111,6 +121,7 @@ public class WindowMain extends Application {
         calcuteMeasure();
         saveSettings();
         readSettings();
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 
 
         root.getChildren().addAll();
@@ -121,17 +132,45 @@ public class WindowMain extends Application {
     }
 
     private void readSettings() {
+        settingsPath.setLayoutX(20);
+        settingsPath.setLayoutY(560);
+        settingsPath.setPrefWidth(500);
+        root.getChildren().add(settingsPath);
         readSettingsButton.setText("Wczytaj ustawienia");
         readSettingsButton.setLayoutX(600);
-        readSettingsButton.setLayoutY(530);
+        readSettingsButton.setLayoutY(560);
         root.getChildren().add(readSettingsButton);
+        readSettingsButton.setOnAction(e -> {
+            JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+            String filePath = "";
+            int returnValue = jfc.showOpenDialog(null);
+            // int returnValue = jfc.showSaveDialog(null);
+
+            if (returnValue == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = jfc.getSelectedFile();
+                filePath = selectedFile.getAbsolutePath();
+                settingsPath.setText(filePath);
+            }
+        });
     }
 
     private void saveSettings() {
-        saveSettingsButton.setText("Zapisz ustawienia");
+        saveSettingsButton.setText("Zapisz ustawienia  ");
         saveSettingsButton.setLayoutX(600);
-        saveSettingsButton.setLayoutY(500);
+        saveSettingsButton.setLayoutY(530);
         root.getChildren().add(saveSettingsButton);
+        saveSettingsButton.setOnAction(e -> {
+            JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+            String filePath = "";
+            int returnValue = jfc.showOpenDialog(null);
+            // int returnValue = jfc.showSaveDialog(null);
+
+            if (returnValue == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = jfc.getSelectedFile();
+                filePath = selectedFile.getAbsolutePath();
+                manager.saveConfigurationToFile(filePath);
+            }
+        });
     }
 
     private void calcuteKNN() {
@@ -208,6 +247,21 @@ public class WindowMain extends Application {
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
+            settingFilePath = settingsPath.getText();
+            if(settingFilePath.equals(""))
+            {
+                Collections.shuffle(extractionManager.getLearningData());
+               // coldStart = extractionManager.getLearningData();
+            }
+            else
+            {
+                manager.readConfigurationFromFile(settingFilePath);
+                extractionManager.setLearningData(manager.configuration.getColdStart());
+                extractionManager.deleteStopwords(extractionManager.getLearningData());
+                DataStemmer stemmer = new DataStemmer();
+                stemmer.stemmizeData(extractionManager.getLearningData());
+                //coldStart = manager.configuration.getColdStart();
+            }
             if(extraction.equals("TF")){
                 for(int i = 0; i < listNames.size(); ++i){
                     highestFrequencyWord.ChooseWords(extractionManager, 6, listNames.get(i));
@@ -272,6 +326,21 @@ public class WindowMain extends Application {
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
+            settingFilePath = settingsPath.getText();
+            if(settingFilePath.equals(""))
+            {
+                Collections.shuffle(extractionManager.getLearningData());
+                // coldStart = extractionManager.getLearningData();
+            }
+            else
+            {
+                manager.readConfigurationFromFile(settingFilePath);
+                extractionManager.setLearningData(manager.configuration.getColdStart());
+                extractionManager.deleteStopwords(extractionManager.getLearningData());
+                DataStemmer stemmer = new DataStemmer();
+                stemmer.stemmizeData(extractionManager.getLearningData());
+                //coldStart = manager.configuration.getColdStart();
+            }
             if(extraction.equals("TF")){
                 for(int i = 0; i < listNames.size(); ++i){
                     highestFrequencyWord.ChooseWords(extractionManager, 6, listNames.get(i));
@@ -322,6 +391,8 @@ public class WindowMain extends Application {
         else if(metric.equals("Metryka Czebyszewa")){
             whatMetric = new ChebyshevMetric();
         }
+
+        manager.configuration = Configuration.builder().coldStart(extractionManager.getLearningData()).build();
         IClassificator clas = new FeatureClassificator(extractionManager.getLearningData(), chosenFeatures, k, whatMetric);
         calculateSummary(extractionManager, clas);
     }
@@ -423,7 +494,25 @@ public class WindowMain extends Application {
         if(checkBox11.isSelected()){
             chosenMeasures.add(new NGramMeasure(n));
         }
-        IClassificator clas = new SimilarityClassificator(extractionManager.getLearningData(), chosenMeasures, k);
+        System.out.println(settingFilePath);
+        settingFilePath = settingsPath.getText();
+        if(settingFilePath.equals(""))
+        {
+            Collections.shuffle(extractionManager.getLearningData());
+            coldStart = extractionManager.getLearningData();
+        }
+        else
+        {
+            manager.readConfigurationFromFile(settingFilePath);
+            coldStart = manager.configuration.getColdStart();
+            extractionManager.deleteStopwords(coldStart);
+            DataStemmer stemmer = new DataStemmer();
+            stemmer.stemmizeData(coldStart);
+        }
+        Configuration config = Configuration.builder().coldStart(coldStart).build();
+        manager.configuration = config;
+
+        IClassificator clas = new SimilarityClassificator(coldStart, chosenMeasures, k);
         calculateSummary(extractionManager,clas);
     }
 

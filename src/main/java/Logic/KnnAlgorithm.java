@@ -34,7 +34,7 @@ public class KnnAlgorithm {
 
     public String chooseLabel(DataNode currentNode, List<DataNode> knownNodes, List<ISimilarityMeasure> measures)
     {
-        Map<DataNode, Double> measureResult = new HashMap<>();
+        Map<DataNode, Double> measureResult = new LinkedHashMap<>();
         for(DataNode node : knownNodes)
         {
             double sumOfMeasureResult = 0;

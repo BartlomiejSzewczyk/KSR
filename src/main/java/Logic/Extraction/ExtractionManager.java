@@ -84,4 +84,8 @@ public class ExtractionManager {
         List<String> tempList = new ArrayList<>(wordList);
         keyWords.add(tempList);
     }
+
+    public void setLearningData(List<DataNode> learningData) {
+        this.learningData = learningData;
+    }
 }
