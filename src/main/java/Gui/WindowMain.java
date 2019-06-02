@@ -1,9 +1,6 @@
 package Gui;
 
-import Data.DataNode;
-import Data.LabelsTypes;
-import Data.OwnDataSerializator;
-import Data.XmlSerializator;
+import Data.*;
 import Logic.Classificators.FeatureClassificator;
 import Logic.Classificators.IClassificator;
 import Logic.Classificators.SimilarityClassificator;
@@ -37,6 +34,7 @@ import javafx.stage.WindowEvent;
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class WindowMain extends Application {
@@ -92,6 +90,8 @@ public class WindowMain extends Application {
     private ConfigurationManager manager;
     private List<DataNode> coldStart;
     private String settingFilePath = "";
+    private SaveData saveData = new SaveData("data.txt");
+    private boolean data = true;
     //endregion
 
     public static void main(String[] args) {
@@ -382,16 +382,15 @@ public class WindowMain extends Application {
             }
         }
         IMetric whatMetric = null;
-        if(metric.equals("Metryka euklidesowa")){
+        if(metric.equals("euklidesowa")){
             whatMetric = new EuclideanMetric();
         }
-        else if(metric.equals("Metryka uliczna")){
+        else if(metric.equals("uliczna")){
             whatMetric = new ManhattanMetric();
         }
-        else if(metric.equals("Metryka Czebyszewa")){
+        else if(metric.equals("Czebyszewa")){
             whatMetric = new ChebyshevMetric();
         }
-
         manager.configuration = Configuration.builder().coldStart(extractionManager.getLearningData()).build();
         IClassificator clas = new FeatureClassificator(extractionManager.getLearningData(), chosenFeatures, k, whatMetric);
         calculateSummary(extractionManager, clas);
@@ -432,6 +431,21 @@ public class WindowMain extends Application {
         }
         trueResultTextField.setText(String.valueOf(bad));
         falseResultTextField.setText(String.valueOf(good));
+        if(data){
+            try {
+                String features = "";
+                if(checkBox1.isSelected() && checkBox2.isSelected() && checkBox3.isSelected() && checkBox4.isSelected()
+                && checkBox5.isSelected() && checkBox6.isSelected() && checkBox7.isSelected() && checkBox8.isSelected()){
+                    features = "all";
+                }
+                else if(checkBox1.isSelected() && checkBox2.isSelected() && checkBox3.isSelected() && checkBox5.isSelected()){
+                    features = "half";
+                }
+                saveData.save(metric, extraction, percent.toString(), category, k.toString(), features, trueResultTextField, falseResultTextField);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void calcuteMeasure() {
@@ -621,9 +635,9 @@ public class WindowMain extends Application {
         chooseMetricLabel.setFont(myFont);
         ObservableList<String> options =
                 FXCollections.observableArrayList(
-                        "Metryka euklidesowa",
-                        "Metryka Czebyszewa",
-                        "Metryka uliczna"
+                        "euklidesowa",
+                        "Czebyszewa",
+                        "uliczna"
                 );
         chooseMEtricComboBox = new ComboBox(options);
         chooseMEtricComboBox.setLayoutY(170);

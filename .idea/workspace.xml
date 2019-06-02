@@ -21,8 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Gui/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1054">
-              <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+            <state relative-caret-position="187">
+              <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,35 +33,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Gui/WindowMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="426" selection-start-line="426" selection-end-line="426" />
+            <state relative-caret-position="96">
+              <caret line="485" column="31" selection-start-line="485" selection-start-column="28" selection-end-line="485" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4356#4589#0" />
-                <element signature="e#4595#4827#0" />
-                <element signature="e#17588#18522#0" />
-                <element signature="e#18528#19733#0" />
-                <element signature="e#19739#20296#0" />
-                <element signature="e#20302#20750#0" />
-                <element signature="e#20756#21100#0" />
-                <element signature="e#21458#22144#0" />
-                <element signature="e#22150#22812#0" />
-                <element signature="e#22819#23457#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/MostCommonKeyword.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Data/SaveData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="119">
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,14 +78,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Data/OwnDataSerializator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="221">
+              <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Data/DeserializedDataContainer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Data/DataNode.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
@@ -140,6 +134,8 @@
       <find>Topics</find>
       <find>Sport</find>
       <find>clas</find>
+      <find>metryka</find>
+      <find>save</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,7 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Logic/Features/FirstVowelWordCounter.java" />
         <option value="$PROJECT_DIR$/src/main/java/Logic/Features/LastVowelWordCounter.java" />
         <option value="$PROJECT_DIR$/src/main/java/Logic/Features/MediumWordCounter.java" />
         <option value="$PROJECT_DIR$/src/main/java/Logic/Extraction/TFIDF.java" />
@@ -199,6 +194,7 @@
         <option value="$PROJECT_DIR$/src/main/java/Logic/Features/MostCommonKeyword.java" />
         <option value="$PROJECT_DIR$/src/main/java/Gui/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/Gui/WindowMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Data/SaveData.java" />
       </list>
     </option>
   </component>
@@ -252,6 +248,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KSR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KSR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Gui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -262,30 +266,12 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Logic" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="KSR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KSR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="Classificators" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KSR" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KSR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="SimilarityMeasures" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -391,11 +377,13 @@
       <workItem from="1557134152667" duration="158000" />
       <workItem from="1558902817489" duration="18200000" />
       <workItem from="1558921917957" duration="380000" />
+      <workItem from="1559479059796" duration="1840000" />
+      <workItem from="1559488411344" duration="5568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140704000" />
+    <option name="totallyTimeSpent" value="148112000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -408,8 +396,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7512195" visible="true" weight="0.30332828" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7512195" visible="true" weight="0.31240544" />
       <window_info id="Structure" order="1" sideWeight="0.5013624" side_tool="true" weight="0.27231467" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -419,7 +408,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49924356" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71860814" weight="0.3289689" />
-      <window_info anchor="bottom" auto_hide="true" id="Debug" order="3" sideWeight="0.45612708" weight="0.39934534" />
+      <window_info active="true" anchor="bottom" auto_hide="true" id="Debug" order="3" sideWeight="0.44704992" visible="true" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4977307" weight="0.3289689" />
@@ -427,8 +416,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4977307" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49848714" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.28139183" side_tool="true" visible="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48411497" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5529501" side_tool="true" visible="true" weight="0.39934534" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48335856" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -460,38 +449,20 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Gui/WindowMain.java</url>
-          <line>399</line>
+          <line>398</line>
           <properties />
           <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Data/SaveData.java</url>
+          <line>74</line>
+          <properties />
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/MostCommonKeywords3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-80">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#301#302#0" expanded="true" />
-            <element signature="e#328#329#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/MostCommonKeyword5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/MostCommonKeyword6.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -943,6 +914,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Gui/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Logic/Features/ShortWordCounter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -962,12 +943,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Data/OwnDataSerializator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="221">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Data/DeserializedDataContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Data/DataNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
@@ -988,10 +976,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Gui/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Data/SaveData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1054">
-          <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+        <state relative-caret-position="119">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1000,20 +988,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Gui/WindowMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="426" selection-start-line="426" selection-end-line="426" />
+        <state relative-caret-position="96">
+          <caret line="485" column="31" selection-start-line="485" selection-start-column="28" selection-end-line="485" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4356#4589#0" />
-            <element signature="e#4595#4827#0" />
-            <element signature="e#17588#18522#0" />
-            <element signature="e#18528#19733#0" />
-            <element signature="e#19739#20296#0" />
-            <element signature="e#20302#20750#0" />
-            <element signature="e#20756#21100#0" />
-            <element signature="e#21458#22144#0" />
-            <element signature="e#22150#22812#0" />
-            <element signature="e#22819#23457#0" />
           </folding>
         </state>
       </provider>
